@@ -17,6 +17,7 @@
 		BEE4F32022D4383E00879228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE4F31E22D4383E00879228 /* LaunchScreen.storyboard */; };
 		BEE4F32B22D4383E00879228 /* AttackOnProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4F32A22D4383E00879228 /* AttackOnProjectTests.swift */; };
 		BEE4F33622D4383E00879228 /* AttackOnProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE4F33522D4383E00879228 /* AttackOnProjectUITests.swift */; };
+		FE6C57E522D5796F00DF8FEB /* Doge.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FE6C57E422D5796F00DF8FEB /* Doge.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BEE4F33122D4383E00879228 /* AttackOnProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttackOnProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE4F33522D4383E00879228 /* AttackOnProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackOnProjectUITests.swift; sourceTree = "<group>"; };
 		BEE4F33722D4383E00879228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE6C57E422D5796F00DF8FEB /* Doge.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Doge.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		BEE4F30322D4383C00879228 = {
 			isa = PBXGroup;
 			children = (
+				FE6C57E422D5796F00DF8FEB /* Doge.mp4 */,
 				BEE4F30E22D4383C00879228 /* AttackOnProject */,
 				BEE4F32922D4383E00879228 /* AttackOnProjectTests */,
 				BEE4F33422D4383E00879228 /* AttackOnProjectUITests */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6C57E522D5796F00DF8FEB /* Doge.mp4 in Resources */,
 				BEE4F31B22D4383D00879228 /* Main.storyboard in Resources */,
 				BEE4F31222D4383C00879228 /* ik.sks in Resources */,
 				BEE4F31D22D4383E00879228 /* Assets.xcassets in Resources */,

@@ -20,5 +20,6 @@ class KanbanBoardScene: SKScene {
         newScreen.position = CGPoint(x: 0, y: 0)
         
         backgroundColor = UIColor.orange
+        //test
     }
 }

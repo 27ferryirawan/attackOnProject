@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  AttackOnProject
+//  AttactOnProject
 //
-//  Created by Ferry Irawan on 09/07/19.
-//  Copyright © 2019 Ferry Irawan. All rights reserved.
+//  Created by Ahmad Nizar on 12/07/19.
+//  Copyright © 2019 Ahmad Nizar. All rights reserved.
 //
 
 import UIKit

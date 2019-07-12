@@ -15,6 +15,8 @@
 		12DCBB2122D83276007E1469 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB1F22D83276007E1469 /* Main.storyboard */; };
 		12DCBB2322D83276007E1469 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB2222D83276007E1469 /* Assets.xcassets */; };
 		12DCBB2622D83276007E1469 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB2422D83276007E1469 /* LaunchScreen.storyboard */; };
+		12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB3A22D839F2007E1469 /* KanbanBoardScene.sks */; };
+		12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB3C22D83A04007E1469 /* KanbanBoardScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		12DCBB2222D83276007E1469 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12DCBB2522D83276007E1469 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12DCBB2722D83276007E1469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12DCBB3A22D839F2007E1469 /* KanbanBoardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KanbanBoardScene.sks; sourceTree = "<group>"; };
+		12DCBB3C22D83A04007E1469 /* KanbanBoardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanBoardScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 		12DCBB0922D83276007E1469 = {
 			isa = PBXGroup;
 			children = (
+				12DCBB3822D839C6007E1469 /* View */,
 				12DCBB1422D83276007E1469 /* AttactOnProject */,
 				12DCBB1322D83276007E1469 /* Products */,
 			);
@@ -71,6 +76,23 @@
 				12DCBB2722D83276007E1469 /* Info.plist */,
 			);
 			path = AttactOnProject;
+			sourceTree = "<group>";
+		};
+		12DCBB3822D839C6007E1469 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB3922D839D1007E1469 /* KanbanBoard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12DCBB3922D839D1007E1469 /* KanbanBoard */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB3A22D839F2007E1469 /* KanbanBoardScene.sks */,
+				12DCBB3C22D83A04007E1469 /* KanbanBoardScene.swift */,
+			);
+			path = KanbanBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */,
 				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
 				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
 				12DCBB2322D83276007E1469 /* Assets.xcassets in Resources */,
@@ -148,6 +171,7 @@
 			files = (
 				12DCBB1C22D83276007E1469 /* GameScene.swift in Sources */,
 				12DCBB1E22D83276007E1469 /* GameViewController.swift in Sources */,
+				12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */,
 				12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

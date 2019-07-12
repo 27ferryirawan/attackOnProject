@@ -83,7 +83,8 @@
 			children = (
 				12DCBB3922D839D1007E1469 /* KanbanBoard */,
 			);
-			path = View;
+			name = View;
+			path = AttactOnProject;
 			sourceTree = "<group>";
 		};
 		12DCBB3922D839D1007E1469 /* KanbanBoard */ = {

@@ -17,6 +17,16 @@
 		12DCBB2622D83276007E1469 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB2422D83276007E1469 /* LaunchScreen.storyboard */; };
 		12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB3A22D839F2007E1469 /* KanbanBoardScene.sks */; };
 		12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB3C22D83A04007E1469 /* KanbanBoardScene.swift */; };
+		12DCBB4022DB0DD5007E1469 /* StageScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB3F22DB0DD5007E1469 /* StageScene.sks */; };
+		12DCBB4222DB0DE5007E1469 /* StageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB4122DB0DE5007E1469 /* StageScene.swift */; };
+		12DCBB4522DB2796007E1469 /* PreGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB4422DB2796007E1469 /* PreGameScene.sks */; };
+		12DCBB4722DB27A2007E1469 /* PreGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB4622DB27A2007E1469 /* PreGameScene.swift */; };
+		12DCBB4A22DB28E1007E1469 /* GamePlayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB4922DB28E1007E1469 /* GamePlayScene.sks */; };
+		12DCBB4C22DB28F2007E1469 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB4B22DB28F2007E1469 /* GamePlayScene.swift */; };
+		12DCBB5022DB2DDB007E1469 /* AfterGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB4F22DB2DDB007E1469 /* AfterGameScene.sks */; };
+		12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */; };
+		12DCBB5522DB3136007E1469 /* UpgradeShopScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */; };
+		12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +42,16 @@
 		12DCBB2722D83276007E1469 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12DCBB3A22D839F2007E1469 /* KanbanBoardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KanbanBoardScene.sks; sourceTree = "<group>"; };
 		12DCBB3C22D83A04007E1469 /* KanbanBoardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanbanBoardScene.swift; sourceTree = "<group>"; };
+		12DCBB3F22DB0DD5007E1469 /* StageScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageScene.sks; sourceTree = "<group>"; };
+		12DCBB4122DB0DE5007E1469 /* StageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageScene.swift; sourceTree = "<group>"; };
+		12DCBB4422DB2796007E1469 /* PreGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PreGameScene.sks; sourceTree = "<group>"; };
+		12DCBB4622DB27A2007E1469 /* PreGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameScene.swift; sourceTree = "<group>"; };
+		12DCBB4922DB28E1007E1469 /* GamePlayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GamePlayScene.sks; sourceTree = "<group>"; };
+		12DCBB4B22DB28F2007E1469 /* GamePlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
+		12DCBB4F22DB2DDB007E1469 /* AfterGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AfterGameScene.sks; sourceTree = "<group>"; };
+		12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameScene.swift; sourceTree = "<group>"; };
+		12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UpgradeShopScene.sks; sourceTree = "<group>"; };
+		12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeShopScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +101,11 @@
 		12DCBB3822D839C6007E1469 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12DCBB5322DB310C007E1469 /* UpgradeShopScene */,
+				12DCBB4D22DB2DB3007E1469 /* AfterGameScene */,
+				12DCBB4822DB285E007E1469 /* GamePlayScene */,
+				12DCBB4322DB2775007E1469 /* PreGameScene */,
+				12DCBB3E22DB0D9A007E1469 /* StageScene */,
 				12DCBB3922D839D1007E1469 /* KanbanBoard */,
 			);
 			path = View;
@@ -93,6 +118,51 @@
 				12DCBB3C22D83A04007E1469 /* KanbanBoardScene.swift */,
 			);
 			path = KanbanBoard;
+			sourceTree = "<group>";
+		};
+		12DCBB3E22DB0D9A007E1469 /* StageScene */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB3F22DB0DD5007E1469 /* StageScene.sks */,
+				12DCBB4122DB0DE5007E1469 /* StageScene.swift */,
+			);
+			path = StageScene;
+			sourceTree = "<group>";
+		};
+		12DCBB4322DB2775007E1469 /* PreGameScene */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB4422DB2796007E1469 /* PreGameScene.sks */,
+				12DCBB4622DB27A2007E1469 /* PreGameScene.swift */,
+			);
+			path = PreGameScene;
+			sourceTree = "<group>";
+		};
+		12DCBB4822DB285E007E1469 /* GamePlayScene */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB4922DB28E1007E1469 /* GamePlayScene.sks */,
+				12DCBB4B22DB28F2007E1469 /* GamePlayScene.swift */,
+			);
+			path = GamePlayScene;
+			sourceTree = "<group>";
+		};
+		12DCBB4D22DB2DB3007E1469 /* AfterGameScene */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB4F22DB2DDB007E1469 /* AfterGameScene.sks */,
+				12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */,
+			);
+			path = AfterGameScene;
+			sourceTree = "<group>";
+		};
+		12DCBB5322DB310C007E1469 /* UpgradeShopScene */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */,
+				12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */,
+			);
+			path = UpgradeShopScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +226,14 @@
 				12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */,
 				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
 				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
+				12DCBB5022DB2DDB007E1469 /* AfterGameScene.sks in Resources */,
 				12DCBB2322D83276007E1469 /* Assets.xcassets in Resources */,
 				12DCBB2622D83276007E1469 /* LaunchScreen.storyboard in Resources */,
+				12DCBB5522DB3136007E1469 /* UpgradeShopScene.sks in Resources */,
+				12DCBB4022DB0DD5007E1469 /* StageScene.sks in Resources */,
+				12DCBB4522DB2796007E1469 /* PreGameScene.sks in Resources */,
 				12DCBB1A22D83276007E1469 /* Actions.sks in Resources */,
+				12DCBB4A22DB28E1007E1469 /* GamePlayScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,9 +244,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12DCBB4C22DB28F2007E1469 /* GamePlayScene.swift in Sources */,
+				12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */,
+				12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */,
 				12DCBB1C22D83276007E1469 /* GameScene.swift in Sources */,
 				12DCBB1E22D83276007E1469 /* GameViewController.swift in Sources */,
 				12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */,
+				12DCBB4222DB0DE5007E1469 /* StageScene.swift in Sources */,
+				12DCBB4722DB27A2007E1469 /* PreGameScene.swift in Sources */,
 				12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

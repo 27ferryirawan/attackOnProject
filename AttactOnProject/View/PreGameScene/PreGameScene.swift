@@ -1,33 +1,39 @@
 //
-//  GameScene.swift
+//  PreGameScene.swift
 //  AttactOnProject
 //
-//  Created by Ahmad Nizar on 12/07/19.
+//  Created by Ahmad Nizar on 14/07/19.
 //  Copyright © 2019 Ahmad Nizar. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
-    
-    let background = SKSpriteNode(imageNamed: "yoona")
+class PreGameScene: SKScene {
+    let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
-    
+    var screenText : SKLabelNode!
     
     override func didMove(to view: SKView) {
-        //background styling
+        //backround sizing and positioning
         background.zPosition = -1
         background.position = CGPoint(x: frame.midX, y: frame.midY)
         background.size = CGSize(width: frame.width, height: frame.height)
+        
+        //screen text styling
+        screenText = SKLabelNode(fontNamed: "Arial")
+        screenText.text = "This is PreGame Screen Scene"
+        screenText.fontSize = 40
+        screenText.position = CGPoint(x: frame.midX, y: frame.midY)
         
         //next button styling
         nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
         nextButton.name = "nextButton"
         nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
         
-        addChild(background)
+        addChild(screenText)
         addChild(nextButton)
+        addChild(background)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,7 +49,7 @@ class GameScene: SKScene {
     
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
-        let scene:SKScene = StageScene(size: self.size)
+        let scene:SKScene = GamePlayScene(size: self.size)
         self.view?.presentScene(scene, transition: transition)
     }
 }

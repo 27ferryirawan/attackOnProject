@@ -43,7 +43,7 @@ class GameScene: SKScene {
     
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
-        let scene:SKScene = StageScene(size: self.size)
+        let scene:SKScene = FinishGame(size: self.size)
         self.view?.presentScene(scene, transition: transition)
     }
 }

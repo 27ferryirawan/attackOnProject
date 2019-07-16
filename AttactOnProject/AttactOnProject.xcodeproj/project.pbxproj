@@ -27,6 +27,8 @@
 		12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */; };
 		12DCBB5522DB3136007E1469 /* UpgradeShopScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */; };
 		12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */; };
+		BE3B63A622DD7CE900E9D339 /* FinishGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE3B63A522DD7CE900E9D339 /* FinishGame.sks */; };
+		BE3B63A822DD7CF700E9D339 /* FinishGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B63A722DD7CF700E9D339 /* FinishGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameScene.swift; sourceTree = "<group>"; };
 		12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UpgradeShopScene.sks; sourceTree = "<group>"; };
 		12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeShopScene.swift; sourceTree = "<group>"; };
+		BE3B63A522DD7CE900E9D339 /* FinishGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FinishGame.sks; sourceTree = "<group>"; };
+		BE3B63A722DD7CF700E9D339 /* FinishGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		12DCBB3822D839C6007E1469 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE3B63A422DD745B00E9D339 /* Finish Game */,
 				12DCBB5322DB310C007E1469 /* UpgradeShopScene */,
 				12DCBB4D22DB2DB3007E1469 /* AfterGameScene */,
 				12DCBB4822DB285E007E1469 /* GamePlayScene */,
@@ -165,6 +170,15 @@
 			path = UpgradeShopScene;
 			sourceTree = "<group>";
 		};
+		BE3B63A422DD745B00E9D339 /* Finish Game */ = {
+			isa = PBXGroup;
+			children = (
+				BE3B63A522DD7CE900E9D339 /* FinishGame.sks */,
+				BE3B63A722DD7CF700E9D339 /* FinishGame.swift */,
+			);
+			path = "Finish Game";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3B63A622DD7CE900E9D339 /* FinishGame.sks in Resources */,
 				12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */,
 				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
 				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
@@ -250,6 +265,7 @@
 				12DCBB1C22D83276007E1469 /* GameScene.swift in Sources */,
 				12DCBB1E22D83276007E1469 /* GameViewController.swift in Sources */,
 				12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */,
+				BE3B63A822DD7CF700E9D339 /* FinishGame.swift in Sources */,
 				12DCBB4222DB0DE5007E1469 /* StageScene.swift in Sources */,
 				12DCBB4722DB27A2007E1469 /* PreGameScene.swift in Sources */,
 				12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */,

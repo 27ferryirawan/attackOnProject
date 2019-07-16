@@ -1,40 +1,29 @@
 //
-//  GameScene.swift
+//  LoadingGameScene.swift
 //  AttactOnProject
 //
-//  Created by Ahmad Nizar on 12/07/19.
+//  Created by Hendy Sen on 15/07/19.
 //  Copyright © 2019 Ahmad Nizar. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 import UIKit
-class GameScene: SKScene {
+class LoadingGameScene: SKScene {
     
-    let background = SKSpriteNode(imageNamed: "yoona")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
-    let loadingContainer = SKSpriteNode(imageNamed: "amit-jain-1477751-unsplash")
-    let loadingBar = UIProgressView(progressViewStyle: .bar)
     
     override func didMove(to view: SKView) {
-        //background styling
-        background.zPosition = -1
-        background.position = CGPoint(x: frame.midX, y: frame.midY)
-        background.size = CGSize(width: frame.width, height: frame.height)
         
         //next button styling
         nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
         nextButton.name = "nextButton"
         nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
-        
-        
-        loadingContainer.position = CGPoint(x: frame.midX, y: frame.midY/2)
-        loadingContainer.size = CGSize(width: frame.width*3/4, height: frame.height/2 - 50)
-        addChild(background)
-        addChild(loadingContainer)
+    
         addChild(nextButton)
+        goToNextLoadingScene()
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
@@ -42,11 +31,33 @@ class GameScene: SKScene {
             if touchedNode.name == "nextButton" {
                 // Call the function here.
                 self.goToNextScene()
-
-                }
+                
             }
         }
-   
+    }
+    
+    //
+        func goToNextLoadingScene(){
+            let loadingView = SKScene(size: self.size)
+            view?.presentScene(loadingView, transition: SKTransition.fade(withDuration: 1))
+            loadingView.backgroundColor = SKColor.black
+    
+            let circleImage = SKSpriteNode(imageNamed: "Group 626")
+            circleImage.position = CGPoint(x: frame.midX, y: frame.midY + 25)
+            loadingView.addChild(circleImage)
+    
+            let factImage = SKSpriteNode(imageNamed: "Group 83")
+            factImage.position = CGPoint(x: frame.midX, y: frame.midY/4)
+            loadingView.addChild(factImage)
+    
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.goToNextScene()
+                loadingView.removeAllChildren()
+                loadingView.removeAllActions()
+                
+            }
+    
+        }
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 2)
         let scene:SKScene = StageScene(size: self.size)
@@ -54,4 +65,3 @@ class GameScene: SKScene {
         print("a")
     }
 }
-

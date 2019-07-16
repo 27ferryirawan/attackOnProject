@@ -27,6 +27,10 @@
 		12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */; };
 		12DCBB5522DB3136007E1469 /* UpgradeShopScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */; };
 		12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */; };
+		FEA8681822DC48D200E6C5FC /* LoadingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FEA8681722DC48D200E6C5FC /* LoadingScene.sks */; };
+		FEA8681C22DC491C00E6C5FC /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8681B22DC491C00E6C5FC /* LoadingScene.swift */; };
+		FEA8681F22DC494900E6C5FC /* LoadingGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8681E22DC494900E6C5FC /* LoadingGameScene.swift */; };
+		FEA8682122DC495500E6C5FC /* LoadingGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FEA8682022DC495500E6C5FC /* LoadingGameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameScene.swift; sourceTree = "<group>"; };
 		12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UpgradeShopScene.sks; sourceTree = "<group>"; };
 		12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeShopScene.swift; sourceTree = "<group>"; };
+		FEA8681722DC48D200E6C5FC /* LoadingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingScene.sks; sourceTree = "<group>"; };
+		FEA8681B22DC491C00E6C5FC /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
+		FEA8681E22DC494900E6C5FC /* LoadingGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingGameScene.swift; sourceTree = "<group>"; };
+		FEA8682022DC495500E6C5FC /* LoadingGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingGameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 				12DCBB4322DB2775007E1469 /* PreGameScene */,
 				12DCBB3E22DB0D9A007E1469 /* StageScene */,
 				12DCBB3922D839D1007E1469 /* KanbanBoard */,
+				FEA8681D22DC492C00E6C5FC /* LoadingScene */,
+				FEA8682222DC497000E6C5FC /* LoadingGameScene */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +173,24 @@
 				12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */,
 			);
 			path = UpgradeShopScene;
+			sourceTree = "<group>";
+		};
+		FEA8681D22DC492C00E6C5FC /* LoadingScene */ = {
+			isa = PBXGroup;
+			children = (
+				FEA8681B22DC491C00E6C5FC /* LoadingScene.swift */,
+				FEA8681722DC48D200E6C5FC /* LoadingScene.sks */,
+			);
+			path = LoadingScene;
+			sourceTree = "<group>";
+		};
+		FEA8682222DC497000E6C5FC /* LoadingGameScene */ = {
+			isa = PBXGroup;
+			children = (
+				FEA8681E22DC494900E6C5FC /* LoadingGameScene.swift */,
+				FEA8682022DC495500E6C5FC /* LoadingGameScene.sks */,
+			);
+			path = LoadingGameScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +252,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */,
+				FEA8682122DC495500E6C5FC /* LoadingGameScene.sks in Resources */,
 				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
 				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
+				FEA8681822DC48D200E6C5FC /* LoadingScene.sks in Resources */,
 				12DCBB5022DB2DDB007E1469 /* AfterGameScene.sks in Resources */,
 				12DCBB2322D83276007E1469 /* Assets.xcassets in Resources */,
 				12DCBB2622D83276007E1469 /* LaunchScreen.storyboard in Resources */,
@@ -246,9 +276,11 @@
 			files = (
 				12DCBB4C22DB28F2007E1469 /* GamePlayScene.swift in Sources */,
 				12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */,
+				FEA8681F22DC494900E6C5FC /* LoadingGameScene.swift in Sources */,
 				12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */,
 				12DCBB1C22D83276007E1469 /* GameScene.swift in Sources */,
 				12DCBB1E22D83276007E1469 /* GameViewController.swift in Sources */,
+				FEA8681C22DC491C00E6C5FC /* LoadingScene.swift in Sources */,
 				12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */,
 				12DCBB4222DB0DE5007E1469 /* StageScene.swift in Sources */,
 				12DCBB4722DB27A2007E1469 /* PreGameScene.swift in Sources */,

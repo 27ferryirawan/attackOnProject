@@ -34,6 +34,21 @@ class StageScene: SKScene {
         addChild(screenText)
         addChild(nextButton)
         addChild(background)
+        containerLevelSelect()
+    }
+    
+    func containerLevelSelect() {
+        let containerBox = SKSpriteNode(imageNamed: "containerBox")
+        containerBox.position = CGPoint(x: frame.midX, y: frame.midY)
+        
+        
+        let closeButton = SKSpriteNode(imageNamed: "closeBtn")
+        closeButton.position = CGPoint(x: containerBox.frame
+            .maxX - 10, y: containerBox.frame.maxY - 40)
+        closeButton.name = "closeButton"
+        addChild(closeButton)
+        addChild(containerBox)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

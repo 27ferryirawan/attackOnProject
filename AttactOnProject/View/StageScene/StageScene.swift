@@ -31,7 +31,7 @@ class StageScene: SKScene {
         nextButton.name = "nextButton"
         nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
         
-        addChild(screenText)
+        //addChild(screenText)
         addChild(nextButton)
         addChild(background)
         containerLevelSelect()
@@ -40,24 +40,80 @@ class StageScene: SKScene {
     func containerLevelSelect() {
         let containerBox = SKSpriteNode(imageNamed: "containerBox")
         containerBox.position = CGPoint(x: frame.midX, y: frame.midY)
-        
+        containerBox.zPosition = 0
+        addChild(containerBox)
         
         let closeButton = SKSpriteNode(imageNamed: "closeBtn")
         closeButton.position = CGPoint(x: containerBox.frame
             .maxX - 10, y: containerBox.frame.maxY - 40)
         closeButton.name = "closeButton"
-        addChild(closeButton)
-        addChild(containerBox)
+        closeButton.zPosition = 1
+        containerBox.addChild(closeButton)
+        
+        
+        //Level Block
+        var posX = 0
+        var numberLevel = 1
+        var imageName = "blueBlock"
+        for i in 1...3 {
+            posX = i-1
+            for z in 0...4{
+                if i == 2{
+                    imageName = "lockBlock"
+                }
+                let blueLevelBox = SKSpriteNode(imageNamed: imageName)
+                blueLevelBox.position = CGPoint(x: containerBox.frame.minX + CGFloat(80 + (97 * z)), y: containerBox.frame.midY + CGFloat(65 - (85 * posX)))
+                blueLevelBox.name = "\(numberLevel)"
+                blueLevelBox.zPosition = 2
+                containerBox.addChild(blueLevelBox)
+                
+                if i == 1{
+                    let blueLevelLabel = SKLabelNode(text: "\(numberLevel)")
+                    blueLevelLabel.fontName = "FoxGrotesqueProHeavy"
+                    blueLevelLabel.fontSize = 40
+                    blueLevelLabel.position = CGPoint(x: blueLevelBox.frame.midX, y: blueLevelBox.frame.minY + 13)
+                    blueLevelLabel.zPosition = 3
+                    blueLevelLabel.name = blueLevelBox.name
+                    addChild(blueLevelLabel)
+                    
+                    let levelStar = SKSpriteNode(imageNamed: "3star")
+                    levelStar.position = CGPoint(x: blueLevelBox.frame.midX
+                        , y: blueLevelBox.frame.minY - 15)
+                    levelStar.zPosition = 2
+                    addChild(levelStar)
+                }
+                else {
+                    let levelStar = SKSpriteNode(imageNamed: "noStar")
+                    levelStar.position = CGPoint(x: blueLevelBox.frame.midX
+                        , y: blueLevelBox.frame.minY - 15)
+                    levelStar.zPosition = 2
+                    addChild(levelStar)
+                }
+                
+
+                numberLevel += 1
+            }
+            
+        }
+        
+        
+
+        
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
-            if touchedNode.name == "nextButton" {
+            var name = 0
+            if touchedNode.name != nil {
+                name = Int(touchedNode.name!)!
+            }
+            if name != nil && name != 0{
                 // Call the function here.
-                self.goToNextScene()
+                print(name)
+              //  self.goToNextScene()
             }
         }
     }

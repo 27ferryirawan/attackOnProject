@@ -35,6 +35,7 @@ class StageScene: SKScene {
         addChild(nextButton)
         addChild(background)
         containerLevelSelect()
+        moneyBox()
     }
     
     func containerLevelSelect() {
@@ -102,6 +103,22 @@ class StageScene: SKScene {
         
     }
     
+    func moneyBox() {
+        let moneyContainer = SKSpriteNode(imageNamed: "moneymoneymakeyousmile")
+        moneyContainer.position = CGPoint(x: background.frame.maxX - 125, y: background.frame.maxY - 25)
+        moneyContainer.zPosition = 2
+        background.addChild(moneyContainer)
+
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches{
+            let location = touch.location(in: self)
+            let touchNode = atPoint(location)
+            
+//            touchNode.name = SKSpriteNode(
+        }
+    }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)

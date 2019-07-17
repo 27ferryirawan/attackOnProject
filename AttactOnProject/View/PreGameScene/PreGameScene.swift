@@ -27,7 +27,7 @@ class PreGameScene: SKScene {
         screenText.position = CGPoint(x: frame.midX, y: frame.midY)
         
         //next button styling
-        nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
+        nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.minY*0.8)
         nextButton.name = "nextButton"
         nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
         
@@ -48,8 +48,10 @@ class PreGameScene: SKScene {
     }
     
     func goToNextScene() {
+        let skView = self.view as SKView?
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
-        let scene:SKScene = GamePlayScene(size: self.size)
+        let scene:SKScene = GamePlayScene(size: skView!.bounds.size)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.view?.presentScene(scene, transition: transition)
     }
 }

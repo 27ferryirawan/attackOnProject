@@ -54,7 +54,6 @@ class FinishGame: SKScene {
     }
     
     func displayTotalMoney(){
-        
         //total money box styling
         totalMoneyBox.zPosition = 2
         totalMoneyBox.position = CGPoint(x: background.frame.maxX - 125, y: background.frame.maxY - 25)

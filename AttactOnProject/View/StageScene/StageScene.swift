@@ -12,6 +12,7 @@ import GameplayKit
 class StageScene: SKScene {
     let background = SKSpriteNode(imageNamed: "stageSceneBackground")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
+    let containerBox = SKSpriteNode(imageNamed: "containerBox")
     var screenText : SKLabelNode!
     var arrBlueLevelBox: [SKSpriteNode] = [SKSpriteNode]()
     var imageName = "blueBlock"
@@ -42,12 +43,13 @@ class StageScene: SKScene {
         addChild(background)
         containerLevelSelect()
         moneyBox()
+
     }
     
     
     func containerLevelSelect() {
-        let containerBox = SKSpriteNode(imageNamed: "containerBox")
-        containerBox.position = CGPoint(x: frame.midX, y: frame.midY)
+        
+        containerBox.position = CGPoint(x: background.frame.midX, y: background.frame.midY)
         containerBox.zPosition = 0
         addChild(containerBox)
 

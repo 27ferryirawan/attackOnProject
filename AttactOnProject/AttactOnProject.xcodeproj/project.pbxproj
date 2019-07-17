@@ -31,6 +31,8 @@
 		BE35BF8F22DE260500763A7D /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35BF8E22DE260500763A7D /* LoadingScene.swift */; };
 		BE35BF9222DE262300763A7D /* LoadingGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE35BF9122DE262300763A7D /* LoadingGameScene.sks */; };
 		BE35BF9422DE262E00763A7D /* LoadingGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35BF9322DE262E00763A7D /* LoadingGameScene.swift */; };
+		BE35BF9622DEFC9A00763A7D /* TutorialSceneOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE35BF9522DEFC9A00763A7D /* TutorialSceneOne.sks */; };
+		BE35BF9922DEFCBB00763A7D /* TutorialSceneOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */; };
 		BE3B63A622DD7CE900E9D339 /* FinishGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE3B63A522DD7CE900E9D339 /* FinishGame.sks */; };
 		BE3B63A822DD7CF700E9D339 /* FinishGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B63A722DD7CF700E9D339 /* FinishGame.swift */; };
 		FE002FAB22DEF1F000C25719 /* Fox Grotesque Pro Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA122DEF1F000C25719 /* Fox Grotesque Pro Italic.otf */; };
@@ -72,6 +74,8 @@
 		BE35BF8E22DE260500763A7D /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		BE35BF9122DE262300763A7D /* LoadingGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingGameScene.sks; sourceTree = "<group>"; };
 		BE35BF9322DE262E00763A7D /* LoadingGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingGameScene.swift; sourceTree = "<group>"; };
+		BE35BF9522DEFC9A00763A7D /* TutorialSceneOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialSceneOne.sks; sourceTree = "<group>"; };
+		BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSceneOne.swift; sourceTree = "<group>"; };
 		BE3B63A522DD7CE900E9D339 /* FinishGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FinishGame.sks; sourceTree = "<group>"; };
 		BE3B63A722DD7CF700E9D339 /* FinishGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGame.swift; sourceTree = "<group>"; };
 		FE002FA122DEF1F000C25719 /* Fox Grotesque Pro Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Italic.otf"; sourceTree = "<group>"; };
@@ -118,10 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				12DCBB1522D83276007E1469 /* AppDelegate.swift */,
-				12DCBB1722D83276007E1469 /* GameScene.sks */,
-				12DCBB1B22D83276007E1469 /* GameScene.swift */,
 				12DCBB1922D83276007E1469 /* Actions.sks */,
-				12DCBB1D22D83276007E1469 /* GameViewController.swift */,
 				12DCBB1F22D83276007E1469 /* Main.storyboard */,
 				12DCBB2222D83276007E1469 /* Assets.xcassets */,
 				12DCBB2422D83276007E1469 /* LaunchScreen.storyboard */,
@@ -134,6 +135,9 @@
 		12DCBB3822D839C6007E1469 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BE35BF9C22DEFCE700763A7D /* GameView Controller */,
+				BE35BF9B22DEFCD300763A7D /* Game Scene */,
+				BE35BF9722DEFCA600763A7D /* Tutorial One */,
 				BE35BF9022DE261700763A7D /* Loading Game Scene */,
 				BE35BF8B22DE25DF00763A7D /* Loading Scene */,
 				BE3B63A422DD745B00E9D339 /* Finish Game */,
@@ -217,6 +221,32 @@
 				BE35BF9322DE262E00763A7D /* LoadingGameScene.swift */,
 			);
 			path = "Loading Game Scene";
+			sourceTree = "<group>";
+		};
+		BE35BF9722DEFCA600763A7D /* Tutorial One */ = {
+			isa = PBXGroup;
+			children = (
+				BE35BF9522DEFC9A00763A7D /* TutorialSceneOne.sks */,
+				BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */,
+			);
+			path = "Tutorial One";
+			sourceTree = "<group>";
+		};
+		BE35BF9B22DEFCD300763A7D /* Game Scene */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB1722D83276007E1469 /* GameScene.sks */,
+				12DCBB1B22D83276007E1469 /* GameScene.swift */,
+			);
+			path = "Game Scene";
+			sourceTree = "<group>";
+		};
+		BE35BF9C22DEFCE700763A7D /* GameView Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB1D22D83276007E1469 /* GameViewController.swift */,
+			);
+			path = "GameView Controller";
 			sourceTree = "<group>";
 		};
 		BE3B63A422DD745B00E9D339 /* Finish Game */ = {
@@ -311,6 +341,7 @@
 				FE002FAD22DEF1F000C25719 /* Fox Grotesque Pro Bold.otf in Resources */,
 				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
 				FE002FAF22DEF1F000C25719 /* Fox Grotesque Pro Thin.otf in Resources */,
+				BE35BF9622DEFC9A00763A7D /* TutorialSceneOne.sks in Resources */,
 				FE002FAC22DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf in Resources */,
 				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
 				FE002FAB22DEF1F000C25719 /* Fox Grotesque Pro Italic.otf in Resources */,
@@ -340,6 +371,7 @@
 				12DCBB4C22DB28F2007E1469 /* GamePlayScene.swift in Sources */,
 				12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */,
 				12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */,
+				BE35BF9922DEFCBB00763A7D /* TutorialSceneOne.swift in Sources */,
 				12DCBB1C22D83276007E1469 /* GameScene.swift in Sources */,
 				12DCBB1E22D83276007E1469 /* GameViewController.swift in Sources */,
 				12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */,

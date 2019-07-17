@@ -17,6 +17,9 @@ class FinishGame: SKScene {
     let nextBtn = SKSpriteNode(imageNamed: "next-button")
     let closeBtn = SKSpriteNode(imageNamed: "close-button")
     let midView = SKSpriteNode(imageNamed: "box-stacked")
+    let totalMoneyBox = SKSpriteNode(imageNamed: "moneymoneymakeyousmile")
+    
+    
     var moneyCompletionText : SKLabelNode!
     
     override func didMove(to view: SKView) {
@@ -51,13 +54,21 @@ class FinishGame: SKScene {
         moneyCompletionText.position = CGPoint(x: frame.midX, y: frame.midY/2+12)
         moneyCompletionText.zPosition = 2
         
+        //total money box styling
+        totalMoneyBox.zPosition = 1
+        totalMoneyBox.position = CGPoint(x: background.frame.maxX - 125, y: background.frame.maxY - 25)
+        totalMoneyBox.zPosition = 2
+        
+        addChild(totalMoneyBox)
         addChild(moneyCompletionText)
         addChild(background)
         addChild(midView)
         addChild(nextBtn)
         addChild(closeBtn)
     }
-    //
+    
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)

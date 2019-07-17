@@ -14,25 +14,13 @@ class GamePlayScene: SKScene {
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     var screenText : SKLabelNode!
     override func didMove(to view: SKView) {
-        //backround sizing and positioning
-        background.zPosition = -1
-        background.position = CGPoint(x: frame.midX, y: frame.midY)
-        background.size = CGSize(width: frame.width, height: frame.height)
-        
-        //screen text styling
-        screenText = SKLabelNode(fontNamed: "Arial")
-        screenText.text = "This is Gameplay Screen Scene"
-        screenText.fontSize = 40
-        screenText.position = CGPoint(x: frame.midX, y: frame.midY)
-        
-        //next button styling
-        nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
-        nextButton.name = "nextButton"
-        nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
-        
-        addChild(screenText)
-        addChild(nextButton)
-        addChild(background)
+        self.initBackground()
+        self.initToDoCard()
+        self.initOnProgressCard()
+        self.initReviewCard()
+        self.initDoneCard()
+        self.initEmployeeCard()
+        self.initScoreCard()
     }
     
     var currentScore:Int = 0
@@ -55,8 +43,6 @@ class GamePlayScene: SKScene {
     }
     
     func initBackground() {
-        //backround sizing and positioning
-        
         let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
         background.zPosition = -2
         background.position = CGPoint(x: frame.midX, y: frame.midY)

@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 import UIKit
+
 class LoadingGameScene: SKScene {
     
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
@@ -61,6 +62,7 @@ class LoadingGameScene: SKScene {
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 2)
         let scene:SKScene = StageScene(size: self.size)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.view?.presentScene(scene, transition: transition)
         print("a")
     }

@@ -323,6 +323,8 @@
 				FE002FAA22DEF1F000C25719 /* Fox Grotesque Pro Bold Italic.otf */,
 			);
 			path = Fonts;
+            sourceTree = "<group>";
+        };
 
 		FEA8681D22DC492C00E6C5FC /* LoadingScene */ = {
 			isa = PBXGroup;

@@ -14,15 +14,15 @@ class LoadingGameScene: SKScene {
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     
     override func didMove(to view: SKView) {
-        
         //next button styling
         nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
         nextButton.name = "nextButton"
         nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
-    
+        nextButton.zPosition = 2
         addChild(nextButton)
         goToNextLoadingScene()
     }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -52,15 +52,14 @@ class LoadingGameScene: SKScene {
     
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.goToNextScene()
-                loadingView.removeAllChildren()
-                loadingView.removeAllActions()
+                self.removeAllChildren()
                 
             }
     
         }
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 2)
-        let scene:SKScene = StageScene(size: self.size)
+        let scene:SKScene = UpgradeShopScene(size: self.frame.size)
         self.view?.presentScene(scene, transition: transition)
         print("a")
     }

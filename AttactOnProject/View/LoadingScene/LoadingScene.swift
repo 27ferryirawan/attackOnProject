@@ -11,7 +11,7 @@ import GameplayKit
 import UIKit
 class LoadingScene: SKScene {
     
-    let background = SKSpriteNode(imageNamed: "yoona")
+    let background = SKSpriteNode(imageNamed: "00 Splash-Title-View")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     let loadingContainer = SKSpriteNode(imageNamed: "amit-jain-1477751-unsplash")
     let loadingBar = UIProgressView(progressViewStyle: .bar)
@@ -75,7 +75,7 @@ class LoadingScene: SKScene {
 
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 2)
-        let scene:SKScene = LoadingGameScene(size: self.size)
+        let scene:SKScene = LoadingGameScene(size: self.frame.size)
         self.view?.presentScene(scene, transition: transition)
         print("a")
     }

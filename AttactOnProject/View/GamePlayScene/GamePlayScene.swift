@@ -10,7 +10,6 @@ import SpriteKit
 import GameplayKit
 
 class GamePlayScene: SKScene {
-    
     override func didMove(to view: SKView) {
         self.initBackground()
         self.initToDoCard()
@@ -20,6 +19,8 @@ class GamePlayScene: SKScene {
         self.initEmployeeCard()
         self.initScoreCard()
     }
+    
+    var currentScore:Int = 0
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -247,11 +248,23 @@ class GamePlayScene: SKScene {
         scoreCard.position = CGPoint(x: frame.maxX*0.55, y: frame.maxY*0.85)
         scoreCard.zPosition = -1
         
-        scoreLabel.text = "1000000"
+        scoreLabel.text = String(currentScore)
         scoreLabel.fontSize = 20
         scoreLabel.position = CGPoint(x: frame.maxX*0.6, y: frame.maxY*0.82)
         
         addChild(scoreCard)
         addChild(scoreLabel)
+    }
+}
+
+class TaskCardContainer {
+    var name: String
+    var type: String
+    var status: Bool
+    
+    init(name: String, type: String, status: Bool) {
+        self.name = name
+        self.type = type
+        self.status = status
     }
 }

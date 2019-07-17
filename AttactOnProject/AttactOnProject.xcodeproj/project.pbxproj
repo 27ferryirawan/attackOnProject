@@ -99,8 +99,8 @@
 			children = (
 				12DCBB1522D83276007E1469 /* AppDelegate.swift */,
 				12DCBB1722D83276007E1469 /* GameScene.sks */,
-				12DCBB1922D83276007E1469 /* Actions.sks */,
 				12DCBB1B22D83276007E1469 /* GameScene.swift */,
+				12DCBB1922D83276007E1469 /* Actions.sks */,
 				12DCBB1D22D83276007E1469 /* GameViewController.swift */,
 				12DCBB1F22D83276007E1469 /* Main.storyboard */,
 				12DCBB2222D83276007E1469 /* Assets.xcassets */,

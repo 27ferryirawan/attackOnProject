@@ -122,7 +122,16 @@
 				12DCBB2222D83276007E1469 /* Assets.xcassets */,
 				12DCBB2422D83276007E1469 /* LaunchScreen.storyboard */,
 				12DCBB2722D83276007E1469 /* Info.plist */,
-				FE002F8B22DDA45400C25719 /* Fonts */,
+				FE002F9422DDA48C00C25719 /* Fox Grotesque Pro Bold Italic.otf */,
+				FE002F9122DDA48C00C25719 /* Fox Grotesque Pro Bold.otf */,
+				FE002F9022DDA48C00C25719 /* Fox Grotesque Pro Heavy Italic.otf */,
+				FE002F8E22DDA48B00C25719 /* Fox Grotesque Pro Heavy.otf */,
+				FE002F9522DDA48C00C25719 /* Fox Grotesque Pro Italic.otf */,
+				FE002F9222DDA48C00C25719 /* Fox Grotesque Pro Light Italic.otf */,
+				FE002F8D22DDA48B00C25719 /* Fox Grotesque Pro Light.otf */,
+				FE002F9322DDA48C00C25719 /* Fox Grotesque Pro Thin Italic.otf */,
+				FE002F8F22DDA48B00C25719 /* Fox Grotesque Pro Thin.otf */,
+				FE002F8C22DDA48B00C25719 /* Fox Grotesque Pro.otf */,
 			);
 			path = AttactOnProject;
 			sourceTree = "<group>";
@@ -194,23 +203,6 @@
 				12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */,
 			);
 			path = UpgradeShopScene;
-			sourceTree = "<group>";
-		};
-		FE002F8B22DDA45400C25719 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				FE002F9422DDA48C00C25719 /* Fox Grotesque Pro Bold Italic.otf */,
-				FE002F9122DDA48C00C25719 /* Fox Grotesque Pro Bold.otf */,
-				FE002F9022DDA48C00C25719 /* Fox Grotesque Pro Heavy Italic.otf */,
-				FE002F8E22DDA48B00C25719 /* Fox Grotesque Pro Heavy.otf */,
-				FE002F9522DDA48C00C25719 /* Fox Grotesque Pro Italic.otf */,
-				FE002F9222DDA48C00C25719 /* Fox Grotesque Pro Light Italic.otf */,
-				FE002F8D22DDA48B00C25719 /* Fox Grotesque Pro Light.otf */,
-				FE002F9322DDA48C00C25719 /* Fox Grotesque Pro Thin Italic.otf */,
-				FE002F8F22DDA48B00C25719 /* Fox Grotesque Pro Thin.otf */,
-				FE002F8C22DDA48B00C25719 /* Fox Grotesque Pro.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FEA8681D22DC492C00E6C5FC /* LoadingScene */ = {

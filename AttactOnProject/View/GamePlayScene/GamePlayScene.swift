@@ -13,7 +13,6 @@ class GamePlayScene: SKScene {
     let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     var screenText : SKLabelNode!
-
     override func didMove(to view: SKView) {
         self.initBackground()
         self.initToDoCard()

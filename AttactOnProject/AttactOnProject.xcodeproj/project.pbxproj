@@ -27,10 +27,8 @@
 		12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */; };
 		12DCBB5522DB3136007E1469 /* UpgradeShopScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */; };
 		12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */; };
-		BE35BF8D22DE25FD00763A7D /* LoadingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE35BF8C22DE25FD00763A7D /* LoadingScene.sks */; };
-		BE35BF8F22DE260500763A7D /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35BF8E22DE260500763A7D /* LoadingScene.swift */; };
-		BE35BF9222DE262300763A7D /* LoadingGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE35BF9122DE262300763A7D /* LoadingGameScene.sks */; };
-		BE35BF9422DE262E00763A7D /* LoadingGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35BF9322DE262E00763A7D /* LoadingGameScene.swift */; };
+		BE35BF9622DEFC9A00763A7D /* TutorialSceneOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE35BF9522DEFC9A00763A7D /* TutorialSceneOne.sks */; };
+		BE35BF9922DEFCBB00763A7D /* TutorialSceneOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */; };
 		BE3B63A622DD7CE900E9D339 /* FinishGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE3B63A522DD7CE900E9D339 /* FinishGame.sks */; };
 		BE3B63A822DD7CF700E9D339 /* FinishGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B63A722DD7CF700E9D339 /* FinishGame.swift */; };
 		DBC7140222DF32D9000A089B /* Main Menu AoP.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140122DF32D9000A089B /* Main Menu AoP.mp3 */; };
@@ -52,6 +50,10 @@
 		FE002FB222DEF1F000C25719 /* Fox Grotesque Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA822DEF1F000C25719 /* Fox Grotesque Pro.otf */; };
 		FE002FB322DEF1F000C25719 /* Fox Grotesque Pro Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA922DEF1F000C25719 /* Fox Grotesque Pro Heavy.otf */; };
 		FE002FB422DEF1F000C25719 /* Fox Grotesque Pro Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FAA22DEF1F000C25719 /* Fox Grotesque Pro Bold Italic.otf */; };
+		FEA8681822DC48D200E6C5FC /* LoadingScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FEA8681722DC48D200E6C5FC /* LoadingScene.sks */; };
+		FEA8681C22DC491C00E6C5FC /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8681B22DC491C00E6C5FC /* LoadingScene.swift */; };
+		FEA8681F22DC494900E6C5FC /* LoadingGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA8681E22DC494900E6C5FC /* LoadingGameScene.swift */; };
+		FEA8682122DC495500E6C5FC /* LoadingGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FEA8682022DC495500E6C5FC /* LoadingGameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,10 +79,8 @@
 		12DCBB5122DB2DEA007E1469 /* AfterGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterGameScene.swift; sourceTree = "<group>"; };
 		12DCBB5422DB3136007E1469 /* UpgradeShopScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UpgradeShopScene.sks; sourceTree = "<group>"; };
 		12DCBB5622DB3153007E1469 /* UpgradeShopScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeShopScene.swift; sourceTree = "<group>"; };
-		BE35BF8C22DE25FD00763A7D /* LoadingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingScene.sks; sourceTree = "<group>"; };
-		BE35BF8E22DE260500763A7D /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
-		BE35BF9122DE262300763A7D /* LoadingGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingGameScene.sks; sourceTree = "<group>"; };
-		BE35BF9322DE262E00763A7D /* LoadingGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingGameScene.swift; sourceTree = "<group>"; };
+		BE35BF9522DEFC9A00763A7D /* TutorialSceneOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialSceneOne.sks; sourceTree = "<group>"; };
+		BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSceneOne.swift; sourceTree = "<group>"; };
 		BE3B63A522DD7CE900E9D339 /* FinishGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FinishGame.sks; sourceTree = "<group>"; };
 		BE3B63A722DD7CF700E9D339 /* FinishGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGame.swift; sourceTree = "<group>"; };
 		DBC7140122DF32D9000A089B /* Main Menu AoP.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Main Menu AoP.mp3"; sourceTree = "<group>"; };
@@ -102,6 +102,10 @@
 		FE002FA822DEF1F000C25719 /* Fox Grotesque Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro.otf"; sourceTree = "<group>"; };
 		FE002FA922DEF1F000C25719 /* Fox Grotesque Pro Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Heavy.otf"; sourceTree = "<group>"; };
 		FE002FAA22DEF1F000C25719 /* Fox Grotesque Pro Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Bold Italic.otf"; sourceTree = "<group>"; };
+		FEA8681722DC48D200E6C5FC /* LoadingScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingScene.sks; sourceTree = "<group>"; };
+		FEA8681B22DC491C00E6C5FC /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
+		FEA8681E22DC494900E6C5FC /* LoadingGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingGameScene.swift; sourceTree = "<group>"; };
+		FEA8682022DC495500E6C5FC /* LoadingGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoadingGameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,10 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				12DCBB1522D83276007E1469 /* AppDelegate.swift */,
-				12DCBB1722D83276007E1469 /* GameScene.sks */,
-				12DCBB1B22D83276007E1469 /* GameScene.swift */,
 				12DCBB1922D83276007E1469 /* Actions.sks */,
-				12DCBB1D22D83276007E1469 /* GameViewController.swift */,
 				12DCBB1F22D83276007E1469 /* Main.storyboard */,
 				DBC7140722E010D3000A089B /* Agnes.png */,
 				DBC7140A22E010D3000A089B /* Aurel.png */,
@@ -161,8 +162,9 @@
 		12DCBB3822D839C6007E1469 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BE35BF9022DE261700763A7D /* Loading Game Scene */,
-				BE35BF8B22DE25DF00763A7D /* Loading Scene */,
+				BE35BF9C22DEFCE700763A7D /* GameView Controller */,
+				BE35BF9B22DEFCD300763A7D /* Game Scene */,
+				BE35BF9722DEFCA600763A7D /* Tutorial One */,
 				BE3B63A422DD745B00E9D339 /* Finish Game */,
 				12DCBB5322DB310C007E1469 /* UpgradeShopScene */,
 				12DCBB4D22DB2DB3007E1469 /* AfterGameScene */,
@@ -170,6 +172,8 @@
 				12DCBB4322DB2775007E1469 /* PreGameScene */,
 				12DCBB3E22DB0D9A007E1469 /* StageScene */,
 				12DCBB3922D839D1007E1469 /* KanbanBoard */,
+				FEA8681D22DC492C00E6C5FC /* LoadingScene */,
+				FEA8682222DC497000E6C5FC /* LoadingGameScene */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,22 +232,30 @@
 			path = UpgradeShopScene;
 			sourceTree = "<group>";
 		};
-		BE35BF8B22DE25DF00763A7D /* Loading Scene */ = {
+		BE35BF9722DEFCA600763A7D /* Tutorial One */ = {
 			isa = PBXGroup;
 			children = (
-				BE35BF8C22DE25FD00763A7D /* LoadingScene.sks */,
-				BE35BF8E22DE260500763A7D /* LoadingScene.swift */,
+				BE35BF9522DEFC9A00763A7D /* TutorialSceneOne.sks */,
+				BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */,
 			);
-			path = "Loading Scene";
+			path = "Tutorial One";
 			sourceTree = "<group>";
 		};
-		BE35BF9022DE261700763A7D /* Loading Game Scene */ = {
+		BE35BF9B22DEFCD300763A7D /* Game Scene */ = {
 			isa = PBXGroup;
 			children = (
-				BE35BF9122DE262300763A7D /* LoadingGameScene.sks */,
-				BE35BF9322DE262E00763A7D /* LoadingGameScene.swift */,
+				12DCBB1722D83276007E1469 /* GameScene.sks */,
+				12DCBB1B22D83276007E1469 /* GameScene.swift */,
 			);
-			path = "Loading Game Scene";
+			path = "Game Scene";
+			sourceTree = "<group>";
+		};
+		BE35BF9C22DEFCE700763A7D /* GameView Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12DCBB1D22D83276007E1469 /* GameViewController.swift */,
+			);
+			path = "GameView Controller";
 			sourceTree = "<group>";
 		};
 		BE3B63A422DD745B00E9D339 /* Finish Game */ = {
@@ -270,6 +282,24 @@
 				FE002FAA22DEF1F000C25719 /* Fox Grotesque Pro Bold Italic.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FEA8681D22DC492C00E6C5FC /* LoadingScene */ = {
+			isa = PBXGroup;
+			children = (
+				FEA8681B22DC491C00E6C5FC /* LoadingScene.swift */,
+				FEA8681722DC48D200E6C5FC /* LoadingScene.sks */,
+			);
+			path = LoadingScene;
+			sourceTree = "<group>";
+		};
+		FEA8682222DC497000E6C5FC /* LoadingGameScene */ = {
+			isa = PBXGroup;
+			children = (
+				FEA8681E22DC494900E6C5FC /* LoadingGameScene.swift */,
+				FEA8682022DC495500E6C5FC /* LoadingGameScene.sks */,
+			);
+			path = LoadingGameScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +360,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE35BF8D22DE25FD00763A7D /* LoadingScene.sks in Resources */,
 				FE002FB222DEF1F000C25719 /* Fox Grotesque Pro.otf in Resources */,
 				DBC7140E22E010D3000A089B /* Clieff.png in Resources */,
 				DBC7140222DF32D9000A089B /* Main Menu AoP.mp3 in Resources */,
@@ -342,15 +371,21 @@
 				DBC7141222E03037000A089B /* gameData.json in Resources */,
 				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
 				FE002FAF22DEF1F000C25719 /* Fox Grotesque Pro Thin.otf in Resources */,
+				BE35BF9622DEFC9A00763A7D /* TutorialSceneOne.sks in Resources */,
 				FE002FAC22DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf in Resources */,
 				DBC7140422DF3D4E000A089B /* Fanch Developer Team.png in Resources */,
 				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
 				FE002FAB22DEF1F000C25719 /* Fox Grotesque Pro Italic.otf in Resources */,
 				FE002FB022DEF1F000C25719 /* Fox Grotesque Pro Thin Italic.otf in Resources */,
 				FE002FB422DEF1F000C25719 /* Fox Grotesque Pro Bold Italic.otf in Resources */,
+				FEA8682122DC495500E6C5FC /* LoadingGameScene.sks in Resources */,
+				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
+				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
+				FEA8681822DC48D200E6C5FC /* LoadingScene.sks in Resources */,
 				12DCBB5022DB2DDB007E1469 /* AfterGameScene.sks in Resources */,
 				12DCBB2322D83276007E1469 /* Assets.xcassets in Resources */,
 				FE002FB322DEF1F000C25719 /* Fox Grotesque Pro Heavy.otf in Resources */,
+
 				BE35BF9222DE262300763A7D /* LoadingGameScene.sks in Resources */,
 				DBC7141022E010D3000A089B /* Aurel.png in Resources */,
 				12DCBB2622D83276007E1469 /* LaunchScreen.storyboard in Resources */,
@@ -375,16 +410,17 @@
 			files = (
 				12DCBB4C22DB28F2007E1469 /* GamePlayScene.swift in Sources */,
 				12DCBB5222DB2DEA007E1469 /* AfterGameScene.swift in Sources */,
+				FEA8681F22DC494900E6C5FC /* LoadingGameScene.swift in Sources */,
 				12DCBB5722DB3153007E1469 /* UpgradeShopScene.swift in Sources */,
+				BE35BF9922DEFCBB00763A7D /* TutorialSceneOne.swift in Sources */,
 				12DCBB1C22D83276007E1469 /* GameScene.swift in Sources */,
 				12DCBB1E22D83276007E1469 /* GameViewController.swift in Sources */,
+				FEA8681C22DC491C00E6C5FC /* LoadingScene.swift in Sources */,
 				12DCBB3D22D83A04007E1469 /* KanbanBoardScene.swift in Sources */,
-				BE35BF8F22DE260500763A7D /* LoadingScene.swift in Sources */,
 				BE3B63A822DD7CF700E9D339 /* FinishGame.swift in Sources */,
 				12DCBB4222DB0DE5007E1469 /* StageScene.swift in Sources */,
 				12DCBB4722DB27A2007E1469 /* PreGameScene.swift in Sources */,
 				12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */,
-				BE35BF9422DE262E00763A7D /* LoadingGameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8A39UTUTTX;
+				DEVELOPMENT_TEAM = 3GHLH52F3W;
 				INFOPLIST_FILE = AttactOnProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -550,6 +587,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8A39UTUTTX;
+				DEVELOPMENT_TEAM = 3GHLH52F3W;
 				INFOPLIST_FILE = AttactOnProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

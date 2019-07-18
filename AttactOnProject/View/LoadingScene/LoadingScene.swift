@@ -13,7 +13,7 @@ class LoadingScene: SKScene {
     
     let background = SKSpriteNode(imageNamed: "00 Splash-Title-View")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
-    let loadingContainer = SKSpriteNode(imageNamed: "amit-jain-1477751-unsplash")
+    //let loadingContainer = SKSpriteNode(imageNamed: "amit-jain-1477751-unsplash")
     let loadingBar = UIProgressView(progressViewStyle: .bar)
     
     override func didMove(to view: SKView) {
@@ -28,10 +28,10 @@ class LoadingScene: SKScene {
         nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
         
         
-        loadingContainer.position = CGPoint(x: frame.midX, y: frame.midY/2 - 100)
-        loadingContainer.size = CGSize(width: frame.width*3/4, height: frame.height/2 - 50)
+//        loadingContainer.position = CGPoint(x: frame.midX, y: frame.midY/2 - 100)
+////        loadingContainer.size = CGSize(width: frame.width*3/4, height: frame.height/2 - 50)
         addChild(background)
-        addChild(loadingContainer)
+        //addChild(loadingContainer)
         addChild(nextButton)
         loadingBarEdit()
     }
@@ -51,10 +51,11 @@ class LoadingScene: SKScene {
     
     func loadingBarEdit(){
         
-        loadingBar.frame = CGRect(x: loadingContainer.frame.maxX/2 + 100, y: loadingContainer.frame.maxY + 350, width: loadingContainer.frame.width/2, height: 1)
+        loadingBar.frame = CGRect(x: frame.maxX/2, y: frame.midY + 350, width: frame.width/2 , height: 1)
         loadingBar.progressTintColor = .white
         loadingBar.setProgress(0.1, animated: true)
         loadingBar.transform = loadingBar.transform.scaledBy(x: 1, y: 5)
+        loadingBar.layer.zPosition = 2
         view?.addSubview(loadingBar)
         
         UIView.animate(withDuration: 2, delay: 3, animations: {
@@ -65,7 +66,7 @@ class LoadingScene: SKScene {
                 self.goToNextScene()
                 self.loadingBar.removeFromSuperview()
                 self.background.removeFromParent()
-                self.loadingContainer.removeFromParent()
+                //self.loadingContainer.removeFromParent()
             }
             
         }

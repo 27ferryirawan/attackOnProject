@@ -13,7 +13,7 @@ class TutorialSceneOne: SKScene {
     
     let background = SKSpriteNode(imageNamed: "Project-Finish-View-BG")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
-    let tappedButton = SKSpriteNode(color: .clear, size: CGSize(width: 90, height: 115))
+    let tappedButton = SKSpriteNode(color: .black, size: CGSize(width: 90, height: 115))
     let totalMoneyBox = SKSpriteNode(imageNamed: "moneymoneymakeyousmile")
     let teamBoxStateOne = SKSpriteNode(imageNamed: "Team-Box-Idle")
     let teamBoxStateTwo = SKSpriteNode(imageNamed: "Team-Box-Active")

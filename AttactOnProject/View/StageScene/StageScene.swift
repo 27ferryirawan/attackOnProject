@@ -127,8 +127,12 @@ class StageScene: SKScene {
         for touch in touches{
             let location = touch.location(in: self)
             let touchNode = atPoint(location)
-            
-            if touchNode.name != nil{
+            if touchNode.name == "closeButton"
+            {
+                containerBox.removeAllChildren()
+                //self.removeChildren(in: containerBox)
+            }
+            else if touchNode.name != nil{
                 touchedBoxNode = Int(touchNode.name!)!
                 print(arrBlueLevelBox[1].position)
                 arrBlueLevelBox[touchedBoxNode-1].texture = SKTexture(imageNamed: "orangeBlock")

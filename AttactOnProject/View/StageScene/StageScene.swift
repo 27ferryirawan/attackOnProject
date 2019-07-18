@@ -109,20 +109,20 @@ class StageScene: SKScene {
         background.addChild(moneyContainer)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in touches{
-//            let location = touch.location(in: self)
-//            let touchNode = atPoint(location)
-//
-//            if touchNode.name != nil{
-//                touchedBoxNode = Int(touchNode.name!)!
-//                print(arrBlueLevelBox[1].position)
-//                arrBlueLevelBox[touchedBoxNode-1].texture = SKTexture(imageNamed: "orangeBlock")
-//            }
-//
-//
-//        }
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+////        for touch in touches{
+////            let location = touch.location(in: self)
+////            let touchNode = atPoint(location)
+////
+////            if touchNode.name != nil{
+////                touchedBoxNode = Int(touchNode.name!)!
+////                print(arrBlueLevelBox[1].position)
+////                arrBlueLevelBox[touchedBoxNode-1].texture = SKTexture(imageNamed: "orangeBlock")
+////            }
+////
+////
+////        }
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
@@ -169,37 +169,8 @@ class StageScene: SKScene {
             
         }
     }
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches{
-            let location = touch.location(in: self)
-            let touchNode = atPoint(location)
-            if touchNode.name != nil && touchedBoxNode != -1{
-                
-                
-                self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
-                
-                
-                
-            }
-            
-        }
-        //
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            let touchedNode = atPoint(location)
-            
-            if touchedNode.name != nil && touchedBoxNode != -1 {
-                
-                self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
-                self.touchedBoxNode = -1
-                
-                
-            }
-            
-        }
-    }
+    
+    
     
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)

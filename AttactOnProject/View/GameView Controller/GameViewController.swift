@@ -9,13 +9,25 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVKit
+import AVFoundation
 
 class GameViewController: UIViewController {
-
+    var playBGM = AVAudioPlayer()
+    let audioSession = AVAudioSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
+
+//        do{
+//            playBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Main Menu AoP", ofType: "mp3")!))
+//            playBGM.prepareToPlay()
+//        } catch {
+//            print(error)
+//        }
+//        playBGM.play()
         if let scene = GKScene(fileNamed: "LoadingScene") {
             
             // Get the SKScene from the loaded GKScene
@@ -32,8 +44,17 @@ class GameViewController: UIViewController {
                 }
             }
         }
+        
     }
 
+    func configureAudioSession() {
+        do {
+            try audioSession.overrideOutputAudioPort(.speaker)
+            try audioSession.setActive(true)
+        } catch {
+            print("Error")
+        }
+    }
     override var shouldAutorotate: Bool {
         return true
     }

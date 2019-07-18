@@ -11,9 +11,9 @@ import GameplayKit
 import UIKit
 class LoadingScene: SKScene {
     
-    let background = SKSpriteNode(imageNamed: "00 Splash-Title-View")
+    let background = SKSpriteNode(imageNamed: "Fanch Developer Team")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
-    //let loadingContainer = SKSpriteNode(imageNamed: "amit-jain-1477751-unsplash")
+    let loadingContainer = SKSpriteNode(color: .clear, size: CGSize(width: 0, height: 0))
     let loadingBar = UIProgressView(progressViewStyle: .bar)
     
     override func didMove(to view: SKView) {
@@ -23,6 +23,11 @@ class LoadingScene: SKScene {
         background.size = CGSize(width: frame.width, height: frame.height)
         
         //next button styling
+
+        loadingContainer.position = CGPoint(x: frame.midX, y: frame.midY/2 - 100)
+        loadingContainer.size = CGSize(width: frame.width*3/4, height: frame.height/2 - 50)
+        addChild(background)
+
         nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1 - 150 )
         nextButton.name = "nextButton"
         nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
@@ -30,9 +35,10 @@ class LoadingScene: SKScene {
         
 //        loadingContainer.position = CGPoint(x: frame.midX, y: frame.midY/2 - 100)
 ////        loadingContainer.size = CGSize(width: frame.width*3/4, height: frame.height/2 - 50)
-        addChild(background)
-        //addChild(loadingContainer)
-        addChild(nextButton)
+        
+        addChild(loadingContainer)
+//        addChild(nextButton)
+
         loadingBarEdit()
     }
     
@@ -43,7 +49,7 @@ class LoadingScene: SKScene {
             if touchedNode.name == "nextButton" {
                 // Call the function here.
                 self.goToNextScene()
-                
+    
             }
         }
     }
@@ -51,8 +57,13 @@ class LoadingScene: SKScene {
     
     func loadingBarEdit(){
         
-        loadingBar.frame = CGRect(x: frame.maxX/2, y: frame.midY + 350, width: frame.width/2 , height: 1)
-        loadingBar.progressTintColor = .white
+
+        loadingBar.frame = CGRect(x: loadingContainer.frame.maxX/2 + 100, y: loadingContainer.frame.maxY + 350, width: loadingContainer.frame.width/2, height: 1)
+        loadingBar.progressTintColor = .black
+
+//        loadingBar.frame = CGRect(x: frame.maxX/2, y: frame.midY + 350, width: frame.width/2 , height: 1)
+//        loadingBar.progressTintColor = .white
+
         loadingBar.setProgress(0.1, animated: true)
         loadingBar.transform = loadingBar.transform.scaledBy(x: 1, y: 5)
         loadingBar.layer.zPosition = 2
@@ -76,7 +87,7 @@ class LoadingScene: SKScene {
 
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 2)
-        let scene:SKScene = LoadingGameScene(size: self.frame.size)
+        let scene:SKScene = GameScene(size: self.frame.size)
         self.view?.presentScene(scene, transition: transition)
         print("a")
     }

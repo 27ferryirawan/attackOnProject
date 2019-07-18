@@ -34,11 +34,11 @@ class FinishGame: SKScene {
     
     func displayEnergy(){
         //totalmoney Completion Text  styling
-        energyText = SKLabelNode(fontNamed: "Arial")
+        energyText = SKLabelNode(fontNamed: "FoxGrotesqueProHeavy")
         energyText.text = "5/5"
-        energyText.fontSize = 23
+        energyText.fontSize = 21
         energyText.fontColor = .white
-        energyText.position = CGPoint(x: midView.frame.midX+10, y: midView.frame.midY+midView.frame.height/25)
+        energyText.position = CGPoint(x: midView.frame.midX+8, y: midView.frame.midY+midView.frame.height/25-0.5)
         energyText.zPosition = 2
         
         addChild(energyText)
@@ -60,9 +60,9 @@ class FinishGame: SKScene {
         totalMoneyBox.zPosition = 2
         
         //totalmoney Completion Text  styling
-        totalMoneyText = SKLabelNode(fontNamed: "Arial")
+        totalMoneyText = SKLabelNode(fontNamed: "FoxGrotesqueProHeavy")
         totalMoneyText.text = "200.000.000"
-        totalMoneyText.fontSize = 17
+        totalMoneyText.fontSize = 15
         totalMoneyText.fontColor = .white
         totalMoneyText.position = CGPoint(x: background.frame.maxX - 112, y: background.frame.maxY - 30)
         totalMoneyText.zPosition = 3
@@ -98,7 +98,7 @@ class FinishGame: SKScene {
     
     func displayMoneyCompletion(){
         //money Completion Text  styling
-        moneyCompletionText = SKLabelNode(fontNamed: "Arial")
+        moneyCompletionText = SKLabelNode(fontNamed: "FoxGrotesqueProHeavy")
         moneyCompletionText.text = "+50.000"
         moneyCompletionText.fontSize = 40
         moneyCompletionText.fontColor = .white

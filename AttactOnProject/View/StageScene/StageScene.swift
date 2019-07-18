@@ -3,7 +3,7 @@ import GameplayKit
 
 class StageScene: SKScene {
     let background = SKSpriteNode(imageNamed: "stageSceneBackground")
-    let nextButton = SKSpriteNode(imageNamed: "right-arrow")
+    let upgradeButton = SKSpriteNode(imageNamed: "Upgrade-Button")
     let containerBox = SKSpriteNode(imageNamed: "containerBox")
     var screenText : SKLabelNode!
     var arrBlueLevelBox: [SKSpriteNode] = [SKSpriteNode]()
@@ -12,6 +12,9 @@ class StageScene: SKScene {
     var blueLevelBox = SKSpriteNode()
     var touchedBoxNode = -1
     var starArr : [Int] = [3,2,1,0,3,0,0,0,0,0,0,0,0,0,0]
+    let impact = UIImpactFeedbackGenerator()
+    
+    
     override func didMove(to view: SKView) {
         print(self.size)
         //backround sizing and positioning
@@ -26,12 +29,12 @@ class StageScene: SKScene {
         screenText.position = CGPoint(x: frame.midX, y: frame.midY)
         
         //next button styling
-        nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
-        nextButton.name = "nextButton"
-        nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
+        upgradeButton.position = CGPoint(x: frame.maxX*0.8, y: frame.minY*0.25)
+        upgradeButton.name = "upgradeButton"
+        upgradeButton.size = CGSize(width: upgradeButton.size.width * 0.5, height: upgradeButton.size.height * 0.5)
         
         //addChild(screenText)
-        addChild(nextButton)
+        addChild(upgradeButton)
         addChild(background)
         containerLevelSelect()
         moneyBox()
@@ -116,14 +119,19 @@ class StageScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches{
+        for touch : AnyObject in touches{
             let location = touch.location(in: self)
-            let touchNode = atPoint(location)
-            
-            if touchNode.name != nil{
+            var touchNode = atPoint(location)
+            let nameOfTouch = touchNode.name
+            //var numberArr : [Int] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+            if nameOfTouch == "1" {
+                impact.impactOccurred()
                 touchedBoxNode = Int(touchNode.name!)!
                 print(arrBlueLevelBox[1].position)
                 arrBlueLevelBox[touchedBoxNode-1].texture = SKTexture(imageNamed: "orangeBlock")
+            } else if nameOfTouch == "upgradeButton" {
+                impact.impactOccurred()
+                goToUpgradeScene()
             }
             
             
@@ -134,8 +142,6 @@ class StageScene: SKScene {
             let location = touch.location(in: self)
             let touchNode = atPoint(location)
             if touchNode.name != nil && touchedBoxNode != -1{
-                
-                
                 self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
                 
                 
@@ -151,7 +157,7 @@ class StageScene: SKScene {
             let touchedNode = atPoint(location)
             
             if touchedNode.name != nil && touchedBoxNode != -1 {
-                
+                goToNextScene()
                 self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
                 self.touchedBoxNode = -1
                 
@@ -168,5 +174,10 @@ class StageScene: SKScene {
         self.view?.presentScene(scene, transition: transition)
     }
     
+    func goToUpgradeScene() {
+        let transition:SKTransition = SKTransition.fade(withDuration: 1)
+        let scene:SKScene = UpgradeShopScene(size: self.size)
+        self.view?.presentScene(scene, transition: transition)
+    }
 }
 

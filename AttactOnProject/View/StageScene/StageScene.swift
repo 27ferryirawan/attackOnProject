@@ -1,11 +1,3 @@
-//
-//  KanbanBoardScene.swift
-//  AttactOnProject
-//
-//  Created by Ahmad Nizar on 12/07/19.
-//  Copyright © 2019 Ahmad Nizar. All rights reserved.
-//
-
 import SpriteKit
 import GameplayKit
 
@@ -43,7 +35,6 @@ class StageScene: SKScene {
         addChild(background)
         containerLevelSelect()
         moneyBox()
-
     }
     
     
@@ -52,7 +43,6 @@ class StageScene: SKScene {
         containerBox.position = CGPoint(x: background.frame.midX, y: background.frame.midY)
         containerBox.zPosition = 0
         addChild(containerBox)
-
         let closeButton = SKSpriteNode(imageNamed: "closeBtn")
         closeButton.position = CGPoint(x: containerBox.frame
             .maxX - 10, y: containerBox.frame.maxY - 40)
@@ -87,13 +77,12 @@ class StageScene: SKScene {
                     blueLevelLabel.zPosition = 3
                     blueLevelLabel.name = blueLevelBox.name
                     addChild(blueLevelLabel)
-
                     starImageName = "\(starArr[numberLevel-1])Star"
                     let levelStar = SKSpriteNode(imageNamed: starImageName)
                     levelStar.position = CGPoint(x: blueLevelBox.frame.midX
                         , y: blueLevelBox.frame.minY - 15)
                     levelStar.zPosition = 2
-                   addChild(levelStar)
+                    addChild(levelStar)
                 }
                 else {
                     let levelStar = SKSpriteNode(imageNamed: "0Star")
@@ -102,8 +91,6 @@ class StageScene: SKScene {
                     levelStar.zPosition = 2
                     addChild(levelStar)
                 }
-                
-
                 numberLevel += 1
             }
             
@@ -120,8 +107,22 @@ class StageScene: SKScene {
         moneyContainer.position = CGPoint(x: background.frame.maxX - 125, y: background.frame.maxY - 25)
         moneyContainer.zPosition = 2
         background.addChild(moneyContainer)
-
     }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+////        for touch in touches{
+////            let location = touch.location(in: self)
+////            let touchNode = atPoint(location)
+////
+////            if touchNode.name != nil{
+////                touchedBoxNode = Int(touchNode.name!)!
+////                print(arrBlueLevelBox[1].position)
+////                arrBlueLevelBox[touchedBoxNode-1].texture = SKTexture(imageNamed: "orangeBlock")
+////            }
+////
+////
+////        }
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
@@ -168,18 +169,21 @@ class StageScene: SKScene {
                
                     self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
                     self.touchedBoxNode = -1
-                
-                
             }
- 
+            
         }
+
         super.touchesEnded(touches, with: event)
     }
     
+    
+    
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
-        let scene:SKScene = PreGameScene(size: self.size)
+        let scene:SKScene = GameScene(size: self.size)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.view?.presentScene(scene, transition: transition)
     }
     
 }
+

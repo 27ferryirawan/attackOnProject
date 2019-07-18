@@ -37,6 +37,16 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Fox Grotesque Pro Italic.otf</string>
+		<string>Fox Grotesque Pro Bold.otf</string>
+		<string>Fox Grotesque Pro Light.otf</string>
+		<string>Fox Grotesque Pro Light Italic.otf</string>
+		<string>Fox Grotesque Pro Heavy Italic.otf</string>
+		<string>Fox Grotesque Pro Heavy.otf</string>
+		<string>Fox Grotesque Pro.otf</string>
+		<string>Fox Grotesque Pro Thin Italic.otf</string>
+		<string>Fox Grotesque Pro Bold Italic.otf</string>
+		<string>Fox Grotesque Pro Thin.otf</string>
 		<string>Fox Grotesque Pro Thin Italic.otf</string>
 		<string>Fox Grotesque Pro Thin.otf</string>
 		<string>Fox Grotesque Pro.otf</string>

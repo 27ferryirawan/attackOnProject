@@ -107,6 +107,15 @@ class StageScene: SKScene {
         moneyContainer.position = CGPoint(x: background.frame.maxX - 125, y: background.frame.maxY - 25)
         moneyContainer.zPosition = 2
         background.addChild(moneyContainer)
+        
+        
+        let totalMoneyText = SKLabelNode(fontNamed: "FoxGrotesqueProHeavy")
+        totalMoneyText.text = "200.000.000"
+        totalMoneyText.fontSize = 15
+        totalMoneyText.fontColor = .white
+        totalMoneyText.position = CGPoint(x: background.frame.maxX - 112, y: background.frame.maxY - 30)
+        totalMoneyText.zPosition = 3
+        addChild(totalMoneyText)
     }
     
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -166,7 +175,7 @@ class StageScene: SKScene {
             let touchedNode = atPoint(location)
 
             if touchedBoxNode != -1 {
-               
+                    goToNextScene()
                     self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
                     self.touchedBoxNode = -1
             }
@@ -180,7 +189,7 @@ class StageScene: SKScene {
     
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
-        let scene:SKScene = GameScene(size: self.size)
+        let scene:SKScene = GamePlayScene(size: self.size)
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.view?.presentScene(scene, transition: transition)
     }

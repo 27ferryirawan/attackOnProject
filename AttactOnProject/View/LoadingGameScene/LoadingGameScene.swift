@@ -52,7 +52,7 @@ class LoadingGameScene: SKScene {
     
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.goToNextScene()
-                self.removeAllChildren()
+
                 
             }
     

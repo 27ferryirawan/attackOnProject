@@ -11,7 +11,7 @@ import GameplayKit
 
 
 class FinishGame: SKScene {
-    //finish game scene
+    //finish game scene asd
     
     let background = SKSpriteNode(imageNamed: "Project-Finish-View-BG")
     let nextBtn = SKSpriteNode(imageNamed: "next-button")

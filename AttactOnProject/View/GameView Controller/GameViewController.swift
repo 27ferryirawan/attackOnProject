@@ -16,10 +16,10 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
-        if let scene = GKScene(fileNamed: "LoadingScene") {
+        if let scene = GKScene(fileNamed: "GamePlayScene") {
             
             // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! LoadingScene? {
+            if let sceneNode = scene.rootNode as! GamePlayScene? {
                 // Set the scale mode to scale to fit the window
 //                sceneNode.scaleMode = .aspectFill
                 

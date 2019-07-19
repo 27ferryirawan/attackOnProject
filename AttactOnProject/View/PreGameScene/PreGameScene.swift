@@ -19,7 +19,7 @@ class PreGameScene: SKScene {
         background.zPosition = -1
         background.position = CGPoint(x: frame.midX, y: frame.midY)
         background.size = CGSize(width: frame.width, height: frame.height)
-        
+        //asd
         //screen text styling
         screenText = SKLabelNode(fontNamed: "Arial")
         screenText.text = "This is PreGame Screen Scene"

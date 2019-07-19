@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12D4062B22E02C8C00EC67B4 /* gameData.json in Resources */ = {isa = PBXBuildFile; fileRef = 12D4062A22E02C8C00EC67B4 /* gameData.json */; };
+		12D4062E22E15A1900EC67B4 /* gameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4062D22E15A1900EC67B4 /* gameRule.swift */; };
+		12D4063122E15DD700EC67B4 /* gameRuleCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4063022E15DD700EC67B4 /* gameRuleCtrl.swift */; };
 		12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB1522D83276007E1469 /* AppDelegate.swift */; };
 		12DCBB1822D83276007E1469 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB1722D83276007E1469 /* GameScene.sks */; };
 		12DCBB1A22D83276007E1469 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB1922D83276007E1469 /* Actions.sks */; };
@@ -31,6 +34,15 @@
 		BE35BF9922DEFCBB00763A7D /* TutorialSceneOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */; };
 		BE3B63A622DD7CE900E9D339 /* FinishGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE3B63A522DD7CE900E9D339 /* FinishGame.sks */; };
 		BE3B63A822DD7CF700E9D339 /* FinishGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3B63A722DD7CF700E9D339 /* FinishGame.swift */; };
+		DBC7140222DF32D9000A089B /* Main Menu AoP.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140122DF32D9000A089B /* Main Menu AoP.mp3 */; };
+		DBC7140422DF3D4E000A089B /* Fanch Developer Team.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140322DF3D4D000A089B /* Fanch Developer Team.png */; };
+		DBC7140B22E010D3000A089B /* Devina.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140522E010D3000A089B /* Devina.png */; };
+		DBC7140C22E010D3000A089B /* Sen.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140622E010D3000A089B /* Sen.png */; };
+		DBC7140D22E010D3000A089B /* Agnes.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140722E010D3000A089B /* Agnes.png */; };
+		DBC7140E22E010D3000A089B /* Clieff.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140822E010D3000A089B /* Clieff.png */; };
+		DBC7140F22E010D3000A089B /* Pav.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140922E010D3000A089B /* Pav.png */; };
+		DBC7141022E010D3000A089B /* Aurel.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7140A22E010D3000A089B /* Aurel.png */; };
+		DBC7141222E03037000A089B /* gameData.json in Resources */ = {isa = PBXBuildFile; fileRef = DBC7141122E03037000A089B /* gameData.json */; };
 		FE002FAB22DEF1F000C25719 /* Fox Grotesque Pro Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA122DEF1F000C25719 /* Fox Grotesque Pro Italic.otf */; };
 		FE002FAC22DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA222DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf */; };
 		FE002FAD22DEF1F000C25719 /* Fox Grotesque Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA322DEF1F000C25719 /* Fox Grotesque Pro Bold.otf */; };
@@ -48,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12D4062A22E02C8C00EC67B4 /* gameData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gameData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		12D4062D22E15A1900EC67B4 /* gameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameRule.swift; sourceTree = "<group>"; };
+		12D4063022E15DD700EC67B4 /* gameRuleCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameRuleCtrl.swift; sourceTree = "<group>"; };
 		12DCBB1222D83276007E1469 /* AttactOnProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AttactOnProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DCBB1522D83276007E1469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DCBB1722D83276007E1469 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -74,6 +89,15 @@
 		BE35BF9822DEFCBB00763A7D /* TutorialSceneOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSceneOne.swift; sourceTree = "<group>"; };
 		BE3B63A522DD7CE900E9D339 /* FinishGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FinishGame.sks; sourceTree = "<group>"; };
 		BE3B63A722DD7CF700E9D339 /* FinishGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGame.swift; sourceTree = "<group>"; };
+		DBC7140122DF32D9000A089B /* Main Menu AoP.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Main Menu AoP.mp3"; sourceTree = "<group>"; };
+		DBC7140322DF3D4D000A089B /* Fanch Developer Team.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fanch Developer Team.png"; sourceTree = "<group>"; };
+		DBC7140522E010D3000A089B /* Devina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Devina.png; sourceTree = "<group>"; };
+		DBC7140622E010D3000A089B /* Sen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sen.png; sourceTree = "<group>"; };
+		DBC7140722E010D3000A089B /* Agnes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Agnes.png; sourceTree = "<group>"; };
+		DBC7140822E010D3000A089B /* Clieff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clieff.png; sourceTree = "<group>"; };
+		DBC7140922E010D3000A089B /* Pav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pav.png; sourceTree = "<group>"; };
+		DBC7140A22E010D3000A089B /* Aurel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aurel.png; sourceTree = "<group>"; };
+		DBC7141122E03037000A089B /* gameData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gameData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		FE002FA122DEF1F000C25719 /* Fox Grotesque Pro Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Italic.otf"; sourceTree = "<group>"; };
 		FE002FA222DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Light Italic.otf"; sourceTree = "<group>"; };
 		FE002FA322DEF1F000C25719 /* Fox Grotesque Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Bold.otf"; sourceTree = "<group>"; };
@@ -101,9 +125,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12D4062C22E159E700EC67B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12D4062D22E15A1900EC67B4 /* gameRule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12D4062F22E15DC000EC67B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12D4063022E15DD700EC67B4 /* gameRuleCtrl.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		12DCBB0922D83276007E1469 = {
 			isa = PBXGroup;
 			children = (
+				12D4062F22E15DC000EC67B4 /* Controller */,
+				12D4062C22E159E700EC67B4 /* Model */,
 				12DCBB3822D839C6007E1469 /* View */,
 				12DCBB1422D83276007E1469 /* AttactOnProject */,
 				12DCBB1322D83276007E1469 /* Products */,
@@ -124,10 +166,20 @@
 				12DCBB1522D83276007E1469 /* AppDelegate.swift */,
 				12DCBB1922D83276007E1469 /* Actions.sks */,
 				12DCBB1F22D83276007E1469 /* Main.storyboard */,
+				DBC7140722E010D3000A089B /* Agnes.png */,
+				DBC7140A22E010D3000A089B /* Aurel.png */,
+				DBC7140822E010D3000A089B /* Clieff.png */,
+				DBC7140522E010D3000A089B /* Devina.png */,
+				DBC7140922E010D3000A089B /* Pav.png */,
+				DBC7140622E010D3000A089B /* Sen.png */,
 				12DCBB2222D83276007E1469 /* Assets.xcassets */,
 				12DCBB2422D83276007E1469 /* LaunchScreen.storyboard */,
 				12DCBB2722D83276007E1469 /* Info.plist */,
+				DBC7140322DF3D4D000A089B /* Fanch Developer Team.png */,
+				DBC7140122DF32D9000A089B /* Main Menu AoP.mp3 */,
 				FE002FA022DEF1F000C25719 /* Fonts */,
+				12D4062A22E02C8C00EC67B4 /* gameData.json */,
+				DBC7141122E03037000A089B /* gameData.json */,
 			);
 			path = AttactOnProject;
 			sourceTree = "<group>";
@@ -334,14 +386,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE002FB222DEF1F000C25719 /* Fox Grotesque Pro.otf in Resources */,
+				12D4062B22E02C8C00EC67B4 /* gameData.json in Resources */,
+				DBC7140E22E010D3000A089B /* Clieff.png in Resources */,
+				DBC7140222DF32D9000A089B /* Main Menu AoP.mp3 in Resources */,
 				FE002FAE22DEF1F000C25719 /* Fox Grotesque Pro Heavy Italic.otf in Resources */,
 				BE3B63A622DD7CE900E9D339 /* FinishGame.sks in Resources */,
 				12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */,
 				FE002FAD22DEF1F000C25719 /* Fox Grotesque Pro Bold.otf in Resources */,
+				DBC7140F22E010D3000A089B /* Pav.png in Resources */,
+				DBC7141222E03037000A089B /* gameData.json in Resources */,
 				12DCBB2122D83276007E1469 /* Main.storyboard in Resources */,
 				FE002FAF22DEF1F000C25719 /* Fox Grotesque Pro Thin.otf in Resources */,
 				BE35BF9622DEFC9A00763A7D /* TutorialSceneOne.sks in Resources */,
 				FE002FAC22DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf in Resources */,
+				DBC7140422DF3D4E000A089B /* Fanch Developer Team.png in Resources */,
 				12DCBB1822D83276007E1469 /* GameScene.sks in Resources */,
 				FE002FAB22DEF1F000C25719 /* Fox Grotesque Pro Italic.otf in Resources */,
 				FE002FB022DEF1F000C25719 /* Fox Grotesque Pro Thin Italic.otf in Resources */,
@@ -353,13 +411,19 @@
 				12DCBB5022DB2DDB007E1469 /* AfterGameScene.sks in Resources */,
 				12DCBB2322D83276007E1469 /* Assets.xcassets in Resources */,
 				FE002FB322DEF1F000C25719 /* Fox Grotesque Pro Heavy.otf in Resources */,
+
+				BE35BF9222DE262300763A7D /* LoadingGameScene.sks in Resources */,
+				DBC7141022E010D3000A089B /* Aurel.png in Resources */,
 				12DCBB2622D83276007E1469 /* LaunchScreen.storyboard in Resources */,
+				DBC7140C22E010D3000A089B /* Sen.png in Resources */,
 				12DCBB5522DB3136007E1469 /* UpgradeShopScene.sks in Resources */,
 				12DCBB4022DB0DD5007E1469 /* StageScene.sks in Resources */,
+				DBC7140B22E010D3000A089B /* Devina.png in Resources */,
 				12DCBB4522DB2796007E1469 /* PreGameScene.sks in Resources */,
 				12DCBB1A22D83276007E1469 /* Actions.sks in Resources */,
 				12DCBB4A22DB28E1007E1469 /* GamePlayScene.sks in Resources */,
 				FE002FB122DEF1F000C25719 /* Fox Grotesque Pro Light.otf in Resources */,
+				DBC7140D22E010D3000A089B /* Agnes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +447,8 @@
 				12DCBB4222DB0DE5007E1469 /* StageScene.swift in Sources */,
 				12DCBB4722DB27A2007E1469 /* PreGameScene.swift in Sources */,
 				12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */,
+				12D4062E22E15A1900EC67B4 /* gameRule.swift in Sources */,
+				12D4063122E15DD700EC67B4 /* gameRuleCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +596,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XGH7Q8LMZ;
+				DEVELOPMENT_TEAM = 8A39UTUTTX;
+				DEVELOPMENT_TEAM = 3GHLH52F3W;
 				INFOPLIST_FILE = AttactOnProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,6 +616,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XGH7Q8LMZ;
+				DEVELOPMENT_TEAM = 8A39UTUTTX;
+				DEVELOPMENT_TEAM = 3GHLH52F3W;
 				INFOPLIST_FILE = AttactOnProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,0 +1,14 @@
+[{
+    "levelName": "level 1",
+    "goals": 10
+}, {
+    "levelName": "level 2",
+    "goals": 11
+    "levelName" : "1"
+    "task" : 10
+    "duration" : 300
+},{
+    "levelName" : "2"
+    "task" : 11
+    "duration" : 480
+}]

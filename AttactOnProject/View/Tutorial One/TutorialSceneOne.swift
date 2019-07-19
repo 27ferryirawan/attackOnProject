@@ -49,9 +49,9 @@ class TutorialSceneOne: SKScene {
         totalMoneyBox.zPosition = 2
         
         //totalmoney Completion Text  styling
-        totalMoneyText = SKLabelNode(fontNamed: "Arial")
+        totalMoneyText = SKLabelNode(fontNamed: "FoxGrotesqueProHeavy")
         totalMoneyText.text = "200.000.000"
-        totalMoneyText.fontSize = 17
+        totalMoneyText.fontSize = 15
         totalMoneyText.fontColor = .white
         totalMoneyText.position = CGPoint(x: background.frame.maxX - 112, y: background.frame.maxY - 30)
         totalMoneyText.zPosition = 3
@@ -96,6 +96,7 @@ class TutorialSceneOne: SKScene {
     func goToStateTwo() {
         print("asdasd")
         addChild(teamBoxStateTwo)
+        removeChildren(in: [teamBoxStateOne])
     }
 }
 

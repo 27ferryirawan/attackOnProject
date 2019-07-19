@@ -18,6 +18,9 @@ class GamePlayScene: SKScene {
     var allTodoTask = [TaskCardContainer]()
     
     override func didMove(to view: SKView) {
+        let testClass = GameRuleCtrl()
+        print(testClass.getAllGameRuleData())
+        
         self.initBackground()
         self.initToDoCard()
         self.initOnProgressCard()
@@ -58,9 +61,9 @@ class GamePlayScene: SKScene {
         allTodoTask = self.getAllTaskByStage()
 //        print(allTodoTask)
         
-        for n in allTodoTask {
-            print(n.name)
-        }
+//        for n in allTodoTask {
+//            print(n.name)
+//        }
         
         let todoMainCard = SKSpriteNode(imageNamed: "Kanban-01-todo-blank")
         

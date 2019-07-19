@@ -13,7 +13,14 @@ class GamePlayScene: SKScene {
     let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     var screenText : SKLabelNode!
+    
+    var currentTodoTask = [TaskCardContainer]()
+    var allTodoTask = [TaskCardContainer]()
+    
     override func didMove(to view: SKView) {
+        let testClass = GameRuleCtrl()
+        print(testClass.getAllGameRuleData())
+        
         self.initBackground()
         self.initToDoCard()
         self.initOnProgressCard()
@@ -51,6 +58,13 @@ class GamePlayScene: SKScene {
     }
     
     func initToDoCard() {
+        allTodoTask = self.getAllTaskByStage()
+//        print(allTodoTask)
+        
+//        for n in allTodoTask {
+//            print(n.name)
+//        }
+        
         let todoMainCard = SKSpriteNode(imageNamed: "Kanban-01-todo-blank")
         
         todoMainCard.size = CGSize(width: frame.width*0.2, height: frame.height*0.6)
@@ -256,16 +270,28 @@ class GamePlayScene: SKScene {
         addChild(scoreCard)
         addChild(scoreLabel)
     }
+    
+    func getAllTaskByStage() -> [TaskCardContainer] {
+        var allStageTask = [TaskCardContainer]()
+        
+        for n in 1...5 {
+            allStageTask.append(TaskCardContainer(name: "task \(n)", type: "eng", status: false, progress: 0))
+        }
+        
+        return allStageTask
+    }
 }
 
 class TaskCardContainer {
     var name: String
     var type: String
     var status: Bool
+    var progress: Int
     
-    init(name: String, type: String, status: Bool) {
+    init(name: String, type: String, status: Bool, progress: Int) {
         self.name = name
         self.type = type
         self.status = status
+        self.progress = progress
     }
 }

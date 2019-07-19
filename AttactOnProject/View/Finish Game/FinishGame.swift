@@ -23,6 +23,9 @@ class FinishGame: SKScene {
     var totalMoneyText : SKLabelNode!
     var moneyCompletionText : SKLabelNode!
     
+    
+    //gray areaUIColor(displayP3Red: 102/255, green: 102/255, blue: 102/255, alpha: 0.8)
+    
     override func didMove(to view: SKView) {
         displayBckg()
         displayMidView()
@@ -106,6 +109,7 @@ class FinishGame: SKScene {
         moneyCompletionText.zPosition = 2
         
         addChild(moneyCompletionText)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

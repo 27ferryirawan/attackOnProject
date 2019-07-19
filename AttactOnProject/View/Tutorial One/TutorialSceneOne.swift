@@ -13,7 +13,7 @@ class TutorialSceneOne: SKScene {
     
     let background = SKSpriteNode(imageNamed: "Project-Finish-View-BG")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
-    let tappedButton = SKSpriteNode(color: .black, size: CGSize(width: 90, height: 115))
+    let tappedButton = SKSpriteNode(color: .clear, size: CGSize(width: 90, height: 115))
     let totalMoneyBox = SKSpriteNode(imageNamed: "moneymoneymakeyousmile")
     let teamBoxStateOne = SKSpriteNode(imageNamed: "Team-Box-Idle")
     let teamBoxStateTwo = SKSpriteNode(imageNamed: "Team-Box-Active")
@@ -49,9 +49,9 @@ class TutorialSceneOne: SKScene {
         totalMoneyBox.zPosition = 2
         
         //totalmoney Completion Text  styling
-        totalMoneyText = SKLabelNode(fontNamed: "Arial")
+        totalMoneyText = SKLabelNode(fontNamed: "FoxGrotesqueProHeavy")
         totalMoneyText.text = "200.000.000"
-        totalMoneyText.fontSize = 17
+        totalMoneyText.fontSize = 15
         totalMoneyText.fontColor = .white
         totalMoneyText.position = CGPoint(x: background.frame.maxX - 112, y: background.frame.maxY - 30)
         totalMoneyText.zPosition = 3
@@ -96,6 +96,7 @@ class TutorialSceneOne: SKScene {
     func goToStateTwo() {
         print("asdasd")
         addChild(teamBoxStateTwo)
+        removeChildren(in: [teamBoxStateOne])
     }
 }
 

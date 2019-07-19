@@ -52,7 +52,7 @@ class GameScene: SKScene {
 //        let transition:SKTransition = SKTransition.fade(withDuration: 1)
 //        let scene:SKScene = GamePlayScene(size: self.size)
         let transition:SKTransition = SKTransition.fade(withDuration: 2)
-        let scene:SKScene = FinishGame(size: self.size)
+        let scene:SKScene = TutorialSceneOne(size: self.size)
         self.view?.presentScene(scene, transition: transition)
         print("a")
     }

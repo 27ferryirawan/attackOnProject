@@ -28,21 +28,21 @@ class GameViewController: UIViewController {
 //            print(error)
 //        }
 //        playBGM.play()
-        if let scene = GKScene(fileNamed: "LoadingScene") {
+        if let scene = GKScene(fileNamed: "GamePlayScene") {
             // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! LoadingScene? {
+            if let sceneNode = scene.rootNode as! GamePlayScene? {
                 // Set the scale mode to scale to fit the window
 //                sceneNode.scaleMode = .aspectFill
                 
                 // Present the scene
                 if let view = self.view as! SKView? {
-                    do{
-                        playBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Main Menu AoP", ofType: "mp3")!))
-                        playBGM.prepareToPlay()
-                    } catch {
-                        print(error)
-                    }
-                    playBGM.play()
+//                    do{
+//                        playBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Main Menu AoP", ofType: "mp3")!))
+//                        playBGM.prepareToPlay()
+//                    } catch {
+//                        print(error)
+//                    }
+//                    playBGM.play()
                     view.presentScene(sceneNode)
                     view.ignoresSiblingOrder = true
 //                    view.showsFPS = true

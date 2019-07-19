@@ -8,14 +8,15 @@
 
 import SpriteKit
 import GameplayKit
-import UIKit
+
+import AVFoundation
+import AVKit
+
 class GameScene: SKScene {
-    
-    let background = SKSpriteNode(imageNamed: "yoona")
-    let nextButton = SKSpriteNode(imageNamed: "right-arrow")
-    let loadingContainer = SKSpriteNode(imageNamed: "amit-jain-1477751-unsplash")
-    let loadingBar = UIProgressView(progressViewStyle: .bar)
-    
+    let background = SKSpriteNode(imageNamed: "Title")
+    let nextButton = SKSpriteNode(imageNamed: "start-button")
+    let impact = UIImpactFeedbackGenerator()
+
     override func didMove(to view: SKView) {
         //background styling
         background.zPosition = -1
@@ -23,15 +24,12 @@ class GameScene: SKScene {
         background.size = CGSize(width: frame.width, height: frame.height)
         
         //next button styling
-        nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
+        nextButton.position = CGPoint(x: frame.maxX/2, y: frame.maxY*0.25)
         nextButton.name = "nextButton"
-        nextButton.size = CGSize(width: nextButton.size.width * 0.1, height: nextButton.size.height * 0.1)
+        nextButton.size = CGSize(width: nextButton.size.width * 0.4, height: nextButton.size.height * 0.4)
+        nextButton.zPosition = 1
         
-        
-        loadingContainer.position = CGPoint(x: frame.midX, y: frame.midY/2)
-        loadingContainer.size = CGSize(width: frame.width*3/4, height: frame.height/2 - 50)
         addChild(background)
-        addChild(loadingContainer)
         addChild(nextButton)
     }
 
@@ -41,6 +39,8 @@ class GameScene: SKScene {
             let touchedNode = atPoint(location)
             if touchedNode.name == "nextButton" {
                 // Call the function here.
+                
+                impact.impactOccurred()
                 self.goToNextScene()
 
                 }
@@ -48,11 +48,8 @@ class GameScene: SKScene {
         }
    
     func goToNextScene() {
-
-//        let transition:SKTransition = SKTransition.fade(withDuration: 1)
-//        let scene:SKScene = GamePlayScene(size: self.size)
-        let transition:SKTransition = SKTransition.fade(withDuration: 2)
-        let scene:SKScene = TutorialSceneOne(size: self.size)
+        let transition:SKTransition = SKTransition.fade(withDuration: 1)
+        let scene:SKScene = LoadingGameScene(size: self.size)
         self.view?.presentScene(scene, transition: transition)
         print("a")
     }

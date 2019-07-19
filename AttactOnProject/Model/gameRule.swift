@@ -7,3 +7,31 @@
 //
 
 import Foundation
+
+class GameRule {
+    var gameRuleData:Array<Any>!
+    init() {}
+    
+    func getGameRuleJsonData() -> [Any] {
+        var result:[Any] = []
+        do {
+            if let file = Bundle.main.url(forResource: "gameData", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                if let object = json as? [Any] {
+                    // json is an array
+                    print("2")
+                    result = object
+                } else {
+                    print("JSON is invalid")
+                }
+            } else {
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return result
+    }
+}

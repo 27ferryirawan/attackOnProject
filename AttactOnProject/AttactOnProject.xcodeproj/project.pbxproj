@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12D4062B22E02C8C00EC67B4 /* gameData.json in Resources */ = {isa = PBXBuildFile; fileRef = 12D4062A22E02C8C00EC67B4 /* gameData.json */; };
+		12D4062E22E15A1900EC67B4 /* gameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4062D22E15A1900EC67B4 /* gameRule.swift */; };
+		12D4063122E15DD700EC67B4 /* gameRuleCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4063022E15DD700EC67B4 /* gameRuleCtrl.swift */; };
 		12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DCBB1522D83276007E1469 /* AppDelegate.swift */; };
 		12DCBB1822D83276007E1469 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB1722D83276007E1469 /* GameScene.sks */; };
 		12DCBB1A22D83276007E1469 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 12DCBB1922D83276007E1469 /* Actions.sks */; };
@@ -48,6 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12D4062A22E02C8C00EC67B4 /* gameData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gameData.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		12D4062D22E15A1900EC67B4 /* gameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameRule.swift; sourceTree = "<group>"; };
+		12D4063022E15DD700EC67B4 /* gameRuleCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameRuleCtrl.swift; sourceTree = "<group>"; };
 		12DCBB1222D83276007E1469 /* AttactOnProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AttactOnProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DCBB1522D83276007E1469 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DCBB1722D83276007E1469 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -101,9 +107,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12D4062C22E159E700EC67B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12D4062D22E15A1900EC67B4 /* gameRule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12D4062F22E15DC000EC67B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12D4063022E15DD700EC67B4 /* gameRuleCtrl.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		12DCBB0922D83276007E1469 = {
 			isa = PBXGroup;
 			children = (
+				12D4062F22E15DC000EC67B4 /* Controller */,
+				12D4062C22E159E700EC67B4 /* Model */,
 				12DCBB3822D839C6007E1469 /* View */,
 				12DCBB1422D83276007E1469 /* AttactOnProject */,
 				12DCBB1322D83276007E1469 /* Products */,
@@ -128,6 +152,7 @@
 				12DCBB2422D83276007E1469 /* LaunchScreen.storyboard */,
 				12DCBB2722D83276007E1469 /* Info.plist */,
 				FE002FA022DEF1F000C25719 /* Fonts */,
+				12D4062A22E02C8C00EC67B4 /* gameData.json */,
 			);
 			path = AttactOnProject;
 			sourceTree = "<group>";
@@ -334,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE002FB222DEF1F000C25719 /* Fox Grotesque Pro.otf in Resources */,
+				12D4062B22E02C8C00EC67B4 /* gameData.json in Resources */,
 				FE002FAE22DEF1F000C25719 /* Fox Grotesque Pro Heavy Italic.otf in Resources */,
 				BE3B63A622DD7CE900E9D339 /* FinishGame.sks in Resources */,
 				12DCBB3B22D839F2007E1469 /* KanbanBoardScene.sks in Resources */,
@@ -383,6 +409,8 @@
 				12DCBB4222DB0DE5007E1469 /* StageScene.swift in Sources */,
 				12DCBB4722DB27A2007E1469 /* PreGameScene.swift in Sources */,
 				12DCBB1622D83276007E1469 /* AppDelegate.swift in Sources */,
+				12D4062E22E15A1900EC67B4 /* gameRule.swift in Sources */,
+				12D4063122E15DD700EC67B4 /* gameRuleCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class GameRuleCtrl {
+    init() {}
+    
+    func getAllGameRuleData() -> [Any] {
+        let gameDataModel = GameRule()
+        
+        return gameDataModel.getGameRuleJsonData()
+    }
+}

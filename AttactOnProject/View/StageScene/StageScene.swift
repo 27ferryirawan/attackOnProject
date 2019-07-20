@@ -70,7 +70,7 @@ class StageScene: SKScene {
                 userScore[n-1] = UserDefaults.standard.integer(forKey: "userScore\(n)")
             }
         }
-        
+        print(userScore)
         if(!self.checkUserDefaultKey(key: "employeeList")) {
             var tempEmployeeList = [EmployeeContainer]()
             tempEmployeeList.append(EmployeeContainer(name: "Nizar", speed: 10, maksTask: 2, type: "SE"))
@@ -136,6 +136,7 @@ class StageScene: SKScene {
                 containerBox.addChild(blueLevelBox)
     
                 if i == 1{
+                    
                     let blueLevelLabel = SKLabelNode(text: "\(numberLevel)")
                     blueLevelLabel.fontName = "FoxGrotesqueProHeavy"
                     blueLevelLabel.fontSize = 40
@@ -143,7 +144,8 @@ class StageScene: SKScene {
                     blueLevelLabel.zPosition = 3
                     blueLevelLabel.name = blueLevelBox.name
                     addChild(blueLevelLabel)
-                    starImageName = "\(starArr[numberLevel-1])Star"
+                    
+                    starImageName = "\(userScore[numberLevel-1])Star"
                     let levelStar = SKSpriteNode(imageNamed: starImageName)
                     levelStar.position = CGPoint(x: blueLevelBox.frame.midX
                         , y: blueLevelBox.frame.minY - 15)
@@ -169,6 +171,13 @@ class StageScene: SKScene {
         moneyContainer.position = CGPoint(x: background.frame.maxX - 125, y: background.frame.maxY - 25)
         moneyContainer.zPosition = 2
         background.addChild(moneyContainer)
+        
+        let moneyLabel = SKLabelNode(text: "\(userMoney)")
+        moneyLabel.position = CGPoint(x: moneyContainer.frame.midX + 10  , y: moneyContainer.frame.midY - 7)
+        moneyLabel.fontName = "FoxGrotesqueProHeavy"
+        moneyLabel.fontSize = 20
+        moneyLabel.zPosition = 3
+        addChild(moneyLabel)
     }
     
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -193,8 +202,8 @@ class StageScene: SKScene {
             let nameOfTouch = touchNode.name
             //var numberArr : [Int] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
             if nameOfTouch == "1" {
-                blueLevelBox.run(SKAction.sequence([ClickSoundEffect,
-                SKAction.run(goToNextScene)]))
+                UserDefaults.standard.set(Int(touchNode.name!), forKey: "lvlSelected")
+               blueLevelBox.run(SKAction.sequence([ClickSoundEffect,                SKAction.run(goToNextScene)]))
                 impact.impactOccurred()
                 touchedBoxNode = Int(touchNode.name!)!
                 print(arrBlueLevelBox[1].position)
@@ -246,27 +255,14 @@ class StageScene: SKScene {
 //    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in touches {
-//            let location = touch.location(in: self)
-//            let touchedNode = atPoint(location)
-//            if touchedNode.name != nil && touchedBoxNode != -1 {
-//                goToNextScene()
-//                self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
-//                self.touchedBoxNode = -1
-//            }
-//            if touchedBoxNode != -1 {
-//                self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
-//                self.touchedBoxNode = -1
-//            }
-//        super.touchesEnded(touches, with: event)
-//
-//        }
+
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
-            
+            print(Int(touchedNode.name!))
             if touchedNode.name != nil && touchedBoxNode != -1 {
                 goToNextScene()
+                
                 self.arrBlueLevelBox[self.touchedBoxNode-1].texture = SKTexture(imageNamed: "blueBlock")
                 self.touchedBoxNode = -1
                 

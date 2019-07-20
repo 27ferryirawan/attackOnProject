@@ -18,6 +18,7 @@ class GamePlayScene: SKScene {
 
     let notification = NotificationCenter.default
 
+    var employeeCharacter = [EmployeeContainer]()
     var currentTodoTask = [TaskCardContainer]()
     var currentOnProgres = [TaskCardContainer]()
     var currentOnReview = [TaskCardContainer]()
@@ -29,7 +30,6 @@ class GamePlayScene: SKScene {
     
     override func didMove(to view: SKView) {
 
-        print("tesss")
         do{
             playGameplayBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Ingame", ofType: "mp3")!))
             playGameplayBGM.prepareToPlay()
@@ -40,8 +40,8 @@ class GamePlayScene: SKScene {
         playGameplayBGM.play()
         notification.post(name: Notification.Name("StopMusic"), object: nil)
         let testClass = GameRuleCtrl()
-        print(testClass.getAllGameRuleData())
-        
+       // print(testClass.getAllGameRuleData())
+        getEmployee()
         self.initBackground()
         self.initToDoCard()
         self.initOnProgressCard(index: 0)
@@ -51,6 +51,24 @@ class GamePlayScene: SKScene {
         self.initScoreCard()
         self.detailGameBar()
         upadateProgressBar()
+        
+    }
+    
+    func getEmployee () {
+        
+        do {
+            let undecodedEmployeeData = UserDefaults.standard.object(forKey: "employeeList")
+            let decodedArray = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(undecodedEmployeeData as! Data) as! [EmployeeContainer]
+            for n in decodedArray {
+            employeeCharacter.append(n)
+                
+            }
+            
+            print(decodedArray)
+        } catch {
+            print("Couldn't read file.")
+        }
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -431,14 +449,21 @@ class GamePlayScene: SKScene {
         characterBoard.zPosition = -1
         addChild(characterBoard)
         
+
         var charSpace:CGFloat = 0.65
         for n in 1...6 {
             let employeeCard = SKSpriteNode(imageNamed: "lock")
             employeeCard.size = CGSize(width: 55, height: 55)
             employeeCard.name = "employeeCard-\(n)"
             employeeCard.position = CGPoint(x: frame.minX*charSpace, y: frame.minY*0.75)
-            addChild(employeeCard)
+            //addChild(employeeCard)
+            let characterName = SKLabelNode(text: "\(employeeCharacter[n-1].name!)")
+            characterName.fontName = "FoxGrotesqueProHeavy"
+            characterName.position = CGPoint(x: frame.minX*charSpace, y: frame.minY*0.75)
+            addChild(characterName)
             charSpace-=0.25
+            
+            
         }
     }
     

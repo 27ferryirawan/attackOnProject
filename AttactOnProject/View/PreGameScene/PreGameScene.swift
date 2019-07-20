@@ -22,9 +22,11 @@ class PreGameScene: SKScene {
     var screenText : SKLabelNode!
     let impact = UIImpactFeedbackGenerator()
     let GameViewing = GameViewController()
-    
+    var lvlSelected = Int()
     override func didMove(to view: SKView) {
         //backround sizing and positioning
+        lvlSelected = UserDefaults.standard.object(forKey: "lvlSelected") as! Int
+        print(lvlSelected)
         background.zPosition = -1
         background.position = CGPoint(x: frame.midX, y: frame.midY)
         background.size = CGSize(width: frame.width, height: frame.height)

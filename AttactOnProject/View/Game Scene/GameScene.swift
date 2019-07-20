@@ -16,7 +16,7 @@ class GameScene: SKScene {
     let background = SKSpriteNode(imageNamed: "Title")
     let nextButton = SKSpriteNode(imageNamed: "start-button")
     let impact = UIImpactFeedbackGenerator()
-
+    let ClickSoundEffect = SKAction.playSoundFileNamed("Click.mp3", waitForCompletion: false)
     override func didMove(to view: SKView) {
         //background styling
         background.zPosition = -1
@@ -28,7 +28,6 @@ class GameScene: SKScene {
         nextButton.name = "nextButton"
         nextButton.size = CGSize(width: nextButton.size.width * 0.4, height: nextButton.size.height * 0.4)
         nextButton.zPosition = 1
-        
         addChild(background)
         addChild(nextButton)
     }
@@ -39,7 +38,10 @@ class GameScene: SKScene {
             let touchedNode = atPoint(location)
             if touchedNode.name == "nextButton" {
                 // Call the function here.
-                
+                nextButton.run(SKAction.sequence([
+                    ClickSoundEffect,
+                    SKAction.run(goToNextScene)
+                    ]))
                 impact.impactOccurred()
                 self.goToNextScene()
 
@@ -48,6 +50,7 @@ class GameScene: SKScene {
         }
    
     func goToNextScene() {
+        
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
         let scene:SKScene = LoadingGameScene(size: self.size)
         self.view?.presentScene(scene, transition: transition)

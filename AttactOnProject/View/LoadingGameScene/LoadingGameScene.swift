@@ -14,6 +14,10 @@ class LoadingGameScene: SKScene {
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     
     override func didMove(to view: SKView) {
+        
+//        //Random LoadingScreen Image
+
+        
         //next button styling
         nextButton.position = CGPoint(x: frame.maxX*0.9, y: frame.maxY*0.1)
         nextButton.name = "nextButton"
@@ -40,15 +44,25 @@ class LoadingGameScene: SKScene {
         func goToNextLoadingScene(){
             let loadingView = SKScene(size: self.size)
             view?.presentScene(loadingView, transition: SKTransition.fade(withDuration: 1))
-            loadingView.backgroundColor = SKColor.black
-    
-            let circleImage = SKSpriteNode(imageNamed: "Group 626")
-            circleImage.position = CGPoint(x: frame.midX, y: frame.midY + 25)
-            loadingView.addChild(circleImage)
-    
-            let factImage = SKSpriteNode(imageNamed: "Group 83")
-            factImage.position = CGPoint(x: frame.midX, y: frame.midY/4)
-            loadingView.addChild(factImage)
+            loadingView.backgroundColor = SKColor.white
+            
+            var randomImangeNumber = arc4random()%3
+            randomImangeNumber += 1
+            
+            let loadingPic = SKSpriteNode(imageNamed: "Loading\(randomImangeNumber)")
+            loadingPic.position = CGPoint(x: frame.midX, y: frame.midY)
+            loadingPic.size = CGSize(width: frame.size.width, height: frame.size.height*1.01)
+            loadingPic.zPosition = 3
+            loadingView.addChild(loadingPic)
+            
+//
+//            let circleImage = SKSpriteNode(imageNamed: "Group 626")
+//            circleImage.position = CGPoint(x: frame.midX, y: frame.midY + 25)
+//            loadingView.addChild(circleImage)
+//
+//            let factImage = SKSpriteNode(imageNamed: "Group 83")
+//            factImage.position = CGPoint(x: frame.midX, y: frame.midY/4)
+//            loadingView.addChild(factImage)
     
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.goToNextScene()
@@ -60,7 +74,7 @@ class LoadingGameScene: SKScene {
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 2)
 
-        let scene:SKScene = FinishGame(size: self.size)
+        let scene:SKScene = StageScene(size: self.size)
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.view?.presentScene(scene, transition: transition)
         print("a")

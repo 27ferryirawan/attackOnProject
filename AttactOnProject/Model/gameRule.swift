@@ -14,6 +14,7 @@ class GameRule {
     
     func getGameRuleJsonData() -> [Any] {
         var result:[Any] = []
+        print("djsakljajt")
         do {
             if let file = Bundle.main.url(forResource: "gameData", withExtension: "json") {
                 let data = try Data(contentsOf: file)

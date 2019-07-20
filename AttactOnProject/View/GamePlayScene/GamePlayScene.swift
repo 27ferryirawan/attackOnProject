@@ -8,25 +8,44 @@
 
 import SpriteKit
 import GameplayKit
+import AVKit
+import AVFoundation
 
 class GamePlayScene: SKScene {
     let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     var screenText : SKLabelNode!
+    let notification = NotificationCenter.default
     var todoCount = 0
     var onProgressMakeCount = 0
     var onReviewCount = 0
     var doneCount = 0
-    
-    
     var currentTodoTask = [TaskCardContainer]()
     var currentOnProgres = [TaskCardContainer]()
     var currentOnReview = [TaskCardContainer]()
     var currentDone = [TaskCardContainer]()
     var allTodoTask = [TaskCardContainer]()
+    var playGameplayBGM = AVAudioPlayer()
+    
+    override func didMove(to view: SKView) {
+        print("tesss")
+        do{
+            playGameplayBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Ingame", ofType: "mp3")!))
+            playGameplayBGM.prepareToPlay()
+        } catch {
+            print(error)
+        }
+        
+        playGameplayBGM.play()
+        notification.post(name: Notification.Name("StopMusic"), object: nil)
+        let testClass = GameRuleCtrl()
+        print(testClass.getAllGameRuleData())
+        
+=======
     var employeeTaskBar = SKSpriteNode()
     
     override func didMove(to view: SKView) {
+>>>>>>> 979eefbe4dbc2b7619ad72b38af8e58beb2c36fc
         self.initBackground()
         self.initToDoCard()
         self.initOnProgressCard(index: 0)

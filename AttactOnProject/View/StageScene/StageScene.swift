@@ -13,19 +13,24 @@ class StageScene: SKScene {
     var touchedBoxNode = -1
     var starArr : [Int] = [3,2,1,0,3,0,0,0,0,0,0,0,0,0,0]
     let impact = UIImpactFeedbackGenerator()
+    let ClickSoundEffect = SKAction.playSoundFileNamed("Click.mp3", waitForCompletion: false)
+    let closeButton = SKSpriteNode(imageNamed: "close-button")
     var userMoney = 0
     var userScore = [Int](repeating: 0, count: 15)
     var employeeList = [EmployeeContainer]()
     
-    
     override func didMove(to view: SKView) {
+        let testClass = GameRuleCtrl()
+        print(testClass.getAllGameRuleData())
         print(self.size)
+        
         //backround sizing and positioning
         self.initUserDefaultData()
         background.zPosition = -1
         background.position = CGPoint(x: frame.midX, y: frame.midY)
         background.size = CGSize(width: frame.width, height: frame.height)
         print(self.size)
+        
         //screen text styling
         screenText = SKLabelNode(fontNamed: "Arial")
         screenText.text = "This is Stage Screen Scene"
@@ -33,9 +38,12 @@ class StageScene: SKScene {
         screenText.position = CGPoint(x: frame.midX, y: frame.midY)
         
         //next button styling
-        upgradeButton.position = CGPoint(x: frame.maxX*0.8, y: frame.minY*0.25)
+        upgradeButton.position = CGPoint(x: frame.maxX*0.8, y: frame.minY+75)
         upgradeButton.name = "upgradeButton"
         upgradeButton.size = CGSize(width: upgradeButton.size.width * 0.5, height: upgradeButton.size.height * 0.5)
+        
+        
+        
         
         //addChild(screenText)
         addChild(upgradeButton)
@@ -93,21 +101,26 @@ class StageScene: SKScene {
     
     func containerLevelSelect() {
         
+        closeButton.position = CGPoint(x: frame.minX+70, y: frame.maxY-35)
+        closeButton.name = "closeButton"
+        closeButton.zPosition = 1
+        closeButton.size = CGSize(width: self.size.width/8, height: self.size.height/8)
+        
         containerBox.position = CGPoint(x: background.frame.midX, y: background.frame.midY)
         containerBox.zPosition = 0
         addChild(containerBox)
-        let closeButton = SKSpriteNode(imageNamed: "closeBtn")
-        closeButton.position = CGPoint(x: containerBox.frame
-            .maxX - 10, y: containerBox.frame.maxY - 40)
-        closeButton.name = "closeButton"
-        closeButton.zPosition = 1
+//        let closeButton = SKSpriteNode(imageNamed: "closeButton")
+//        closeButton.position = CGPoint(x: containerBox.frame
+//            .maxX - 10, y: containerBox.frame.maxY - 40)
+        
+        
         containerBox.addChild(closeButton)
         
         
         //Level Block
         var posX = 0
         var numberLevel = 1
-        
+
         for i in 1...3 {
             posX = i-1
             for z in 0...4{
@@ -121,7 +134,7 @@ class StageScene: SKScene {
                 blueLevelBox.zPosition = 2
                 arrBlueLevelBox.append(blueLevelBox)
                 containerBox.addChild(blueLevelBox)
-                
+    
                 if i == 1{
                     let blueLevelLabel = SKLabelNode(text: "\(numberLevel)")
                     blueLevelLabel.fontName = "FoxGrotesqueProHeavy"
@@ -180,13 +193,28 @@ class StageScene: SKScene {
             let nameOfTouch = touchNode.name
             //var numberArr : [Int] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
             if nameOfTouch == "1" {
+                blueLevelBox.run(SKAction.sequence([ClickSoundEffect,
+                SKAction.run(goToNextScene)]))
                 impact.impactOccurred()
                 touchedBoxNode = Int(touchNode.name!)!
                 print(arrBlueLevelBox[1].position)
                 arrBlueLevelBox[touchedBoxNode-1].texture = SKTexture(imageNamed: "orangeBlock")
+                
+                let levelDetail = SKSpriteNode(imageNamed: "<#T##String#>")
             } else if nameOfTouch == "upgradeButton" {
+                upgradeButton.run(SKAction.sequence([
+                    ClickSoundEffect,
+                    SKAction.run(goToUpgradeScene)
+                    ]))
                 impact.impactOccurred()
                 goToUpgradeScene()
+            } else if nameOfTouch == "closeButton" {
+                closeButton.run(SKAction.sequence([
+                    ClickSoundEffect,
+                    SKAction.run(returntoGameScene)
+                    ]))
+                impact.impactOccurred()
+                returntoGameScene()
             }
         }
     }
@@ -251,7 +279,7 @@ class StageScene: SKScene {
     
     
     func goToNextScene() {
-        let transition:SKTransition = SKTransition.fade(withDuration: 1)
+        let transition:SKTransition = SKTransition.fade(withDuration: 0.25)
         let scene:SKScene = PreGameScene(size: self.size)
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.view?.presentScene(scene, transition: transition)
@@ -260,6 +288,13 @@ class StageScene: SKScene {
     func goToUpgradeScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
         let scene:SKScene = UpgradeShopScene(size: self.size)
+        self.view?.presentScene(scene, transition: transition)
+    }
+    
+    func returntoGameScene() {
+        let transition:SKTransition = SKTransition.fade(withDuration: 1)
+        let scene:SKScene = GameScene(size: self.size)
+//        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.view?.presentScene(scene, transition: transition)
     }
 }

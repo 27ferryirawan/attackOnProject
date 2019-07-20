@@ -1,8 +1,8 @@
 //
-//  GameScene.swift
+//  EmployeeSelectScene.swift
 //  AttactOnProject
 //
-//  Created by Ahmad Nizar on 12/07/19.
+//  Created by Clieff Tyhonksky on 20/07/19.
 //  Copyright © 2019 Ahmad Nizar. All rights reserved.
 //
 
@@ -12,49 +12,40 @@ import GameplayKit
 import AVFoundation
 import AVKit
 
-class GameScene: SKScene {
-    let background = SKSpriteNode(imageNamed: "Title")
-    let nextButton = SKSpriteNode(imageNamed: "start-button")
+class EmployeeSelectScene: SKScene {
     let impact = UIImpactFeedbackGenerator()
-    let ClickSoundEffect = SKAction.playSoundFileNamed("Click.mp3", waitForCompletion: false)
+    let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
+    let employeeSelect = SKSpriteNode(imageNamed: "Team-Box-Idle")
     override func didMove(to view: SKView) {
-        //background styling
-        background.zPosition = -1
         background.position = CGPoint(x: frame.midX, y: frame.midY)
-        background.size = CGSize(width: frame.width, height: frame.height)
-        
-        //next button styling
-        nextButton.position = CGPoint(x: frame.maxX/2, y: frame.maxY*0.25)
-        nextButton.name = "nextButton"
-        nextButton.size = CGSize(width: nextButton.size.width * 0.4, height: nextButton.size.height * 0.4)
-        nextButton.zPosition = 1
+        background.size = CGSize(width: frame.self.width, height: frame.self.height)
+        background.zPosition = 0
         addChild(background)
-        addChild(nextButton)
+        
+        employeeSelect.position = CGPoint(x: frame.midX, y: frame.midY)
+        employeeSelect.size = CGSize(width: self.size.width-150, height: self.size.height+30)
+        employeeSelect.zPosition = 1
+        addChild(employeeSelect)
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if touchedNode.name == "nextButton" {
                 // Call the function here.
-                nextButton.run(SKAction.sequence([
-                    ClickSoundEffect,
-                    SKAction.run(goToNextScene)
-                    ]))
+                
                 impact.impactOccurred()
                 self.goToNextScene()
-
-                }
+                
             }
         }
-   
+    }
+    
     func goToNextScene() {
-        
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
         let scene:SKScene = LoadingGameScene(size: self.size)
         self.view?.presentScene(scene, transition: transition)
         print("a")
     }
 }
-

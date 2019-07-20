@@ -15,6 +15,9 @@ class StageScene: SKScene {
     let impact = UIImpactFeedbackGenerator()
     let ClickSoundEffect = SKAction.playSoundFileNamed("Click.mp3", waitForCompletion: false)
     let closeButton = SKSpriteNode(imageNamed: "close-button")
+    var userMoney = 0
+    var userScore = [Int](repeating: 0, count: 15)
+    var employeeList = [EmployeeContainer]()
     
     override func didMove(to view: SKView) {
         let testClass = GameRuleCtrl()
@@ -22,6 +25,7 @@ class StageScene: SKScene {
         print(self.size)
         
         //backround sizing and positioning
+        self.initUserDefaultData()
         background.zPosition = -1
         background.position = CGPoint(x: frame.midX, y: frame.midY)
         background.size = CGSize(width: frame.width, height: frame.height)
@@ -48,6 +52,52 @@ class StageScene: SKScene {
         moneyBox()
     }
     
+    func initUserDefaultData() {
+        if(!self.checkUserDefaultKey(key: "userMoney")) {
+            UserDefaults.standard.set(0, forKey: "userMoney")
+            userMoney = 0
+        } else{
+            userMoney = UserDefaults.standard.integer(forKey: "userMoney")
+        }
+        
+        if(!self.checkUserDefaultKey(key: "userScore1")) {
+            for n in 1...15 {
+                UserDefaults.standard.set(0, forKey: "userScore\(n)")
+                userScore.append(0)
+            }
+        } else {
+            for n in 1...15 {
+                userScore[n-1] = UserDefaults.standard.integer(forKey: "userScore\(n)")
+            }
+        }
+        
+        if(!self.checkUserDefaultKey(key: "employeeList")) {
+            var tempEmployeeList = [EmployeeContainer]()
+            tempEmployeeList.append(EmployeeContainer(name: "Nizar", speed: 10, maksTask: 2, type: "SE"))
+            tempEmployeeList.append(EmployeeContainer(name: "Jasmine", speed: 8, maksTask: 1, type: "QA"))
+            employeeList.append(EmployeeContainer(name: "Nizar", speed: 10, maksTask: 2, type: "SE"))
+            employeeList.append(EmployeeContainer(name: "Jasmine", speed: 8, maksTask: 1, type: "QA"))
+            
+            do {
+                let data = try NSKeyedArchiver.archivedData(withRootObject: tempEmployeeList, requiringSecureCoding: false)
+                UserDefaults.standard.set(data, forKey: "employeeList")
+            } catch {
+                print("Couldn't write file")
+            }
+        } else {
+            do {
+                let undecodedEmployeeData = UserDefaults.standard.object(forKey: "employeeList")
+                let decodedArray = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(undecodedEmployeeData as! Data) as! [EmployeeContainer]
+                print(decodedArray)
+            } catch {
+                print("Couldn't read file.")
+            }
+        }
+    }
+    
+    func checkUserDefaultKey(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
     
     func containerLevelSelect() {
         
@@ -249,3 +299,33 @@ class StageScene: SKScene {
     }
 }
 
+class EmployeeContainer: NSObject, NSCoding {
+    let name:String!
+    let speed:Int!
+    let type:String!
+    let maksTask:Int!
+    
+    init(name: String, speed: Int, maksTask: Int, type:String) {
+        self.name = name
+        self.speed = speed
+        self.maksTask = maksTask
+        self.type = type
+    }
+    
+    required convenience init?(coder decoder: NSCoder) {
+        guard let name = decoder.decodeObject(forKey: "name") as? String else { return nil }
+        guard let speed = decoder.decodeObject(forKey: "speed") as? Int else { return nil }
+        guard let type = decoder.decodeObject(forKey: "type") as? String else { return nil }
+        guard let maksTask = decoder.decodeObject(forKey: "maksTask") as? Int else { return nil }
+        
+        self.init(name: name, speed: speed, maksTask: maksTask, type: type)
+    }
+    
+    // Here you need to set properties to specific keys in archive
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.name, forKey: "name")
+        aCoder.encode(self.speed, forKey: "speed")
+        aCoder.encode(self.type, forKey: "type")
+        aCoder.encode(self.maksTask, forKey: "maksTask")
+    }
+}

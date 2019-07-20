@@ -30,9 +30,9 @@ class GameViewController: UIViewController {
 //            print(error)
 //        }
 //        playBGM.play()
-        if let scene = GKScene(fileNamed: "LoadingScene") {
+        if let scene = GKScene(fileNamed: "StageScene") {
             // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! LoadingScene? {
+            if let sceneNode = scene.rootNode as! StageScene? {
                 // Set the scale mode to scale to fit the window
 //                sceneNode.scaleMode = .aspectFill
                 

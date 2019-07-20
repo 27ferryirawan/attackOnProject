@@ -19,7 +19,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         ncObserver.addObserver(self, selector: #selector(self.stopBgm), name: Notification.Name("StopMusic"), object: nil)
+
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
 //        if let scene = GKScene(fileNamed: "GamePlayScene") {

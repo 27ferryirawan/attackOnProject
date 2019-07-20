@@ -18,19 +18,17 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GamePlayScene") {
-        do{
-            playBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Main Menu AoP", ofType: "mp3")!))
-            playBGM.prepareToPlay()
-        } catch {
-            print(error)
-        }
-            
-        playBGM.play()
-        
+//        if let scene = GKScene(fileNamed: "GamePlayScene") {
+//        do{
+//            playBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Main Menu AoP", ofType: "mp3")!))
+//            playBGM.prepareToPlay()
+//        } catch {
+//            print(error)
+//        }
+//        playBGM.play()
         if let scene = GKScene(fileNamed: "GamePlayScene") {
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GamePlayScene? {

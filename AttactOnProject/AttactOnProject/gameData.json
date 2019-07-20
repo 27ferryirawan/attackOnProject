@@ -1,14 +1,41 @@
 [{
-    "levelName": "level 1",
-    "goals": 10
-}, {
-    "levelName": "level 2",
-    "goals": 11
-    "levelName" : "1"
-    "task" : 10
+    "levelName": "1",
+    "task": 10,
+    "duration": 600
+},{
+    "levelName": "2",
+    "task" : 12,
     "duration" : 300
 },{
-    "levelName" : "2"
-    "task" : 11
+    "levelName" : "3",
+    "task" : 14,
     "duration" : 480
+}, {
+    "levelName": "4",
+    "task" : 16,
+    "duration" : 600
+}, {
+    "levelName": "5",
+    "task" : 18,
+    "duration" : 720
+}, {
+    "levelName": "6",
+    "task" : 20,
+    "duration" : 840
+}, {
+    "levelName": "7",
+    "task" : 22,
+    "duration" : 960
+}, {
+    "levelName": "8",
+    "task" : 24,
+    "duration" : 720
+}, {
+    "levelName": "9",
+    "task" : 26,
+    "duration" : 780
+}, {
+    "levelName": "10",
+    "task" : 28,
+    "duration" : 840
 }]

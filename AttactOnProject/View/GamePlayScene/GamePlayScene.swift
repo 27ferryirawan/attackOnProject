@@ -8,16 +8,29 @@
 
 import SpriteKit
 import GameplayKit
+import AVKit
+import AVFoundation
 
 class GamePlayScene: SKScene {
     let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
     let nextButton = SKSpriteNode(imageNamed: "right-arrow")
     var screenText : SKLabelNode!
-    
+    let notification = NotificationCenter.default
     var currentTodoTask = [TaskCardContainer]()
     var allTodoTask = [TaskCardContainer]()
+    var playGameplayBGM = AVAudioPlayer()
     
     override func didMove(to view: SKView) {
+        print("tesss")
+        do{
+            playGameplayBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Ingame", ofType: "mp3")!))
+            playGameplayBGM.prepareToPlay()
+        } catch {
+            print(error)
+        }
+        
+        playGameplayBGM.play()
+        notification.post(name: Notification.Name("StopMusic"), object: nil)
         let testClass = GameRuleCtrl()
         print(testClass.getAllGameRuleData())
         

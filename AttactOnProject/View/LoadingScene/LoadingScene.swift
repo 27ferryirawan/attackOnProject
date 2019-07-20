@@ -23,7 +23,6 @@ class LoadingScene: SKScene {
         background.size = CGSize(width: frame.width, height: frame.height)
         
         //next button styling
-
         loadingContainer.position = CGPoint(x: frame.midX, y: frame.midY/2 - 100)
         loadingContainer.size = CGSize(width: frame.width*3/4, height: frame.height/2 - 50)
         addChild(background)
@@ -69,10 +68,10 @@ class LoadingScene: SKScene {
         loadingBar.layer.zPosition = 2
         view?.addSubview(loadingBar)
         
-        UIView.animate(withDuration: 2, delay: 3, animations: {
+        UIView.animate(withDuration: 5, delay: 3, animations: {
             self.loadingBar.setProgress(1, animated: true)
         }) { (finished:Bool) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                 
                 self.goToNextScene()
                 self.loadingBar.removeFromSuperview()

@@ -27,7 +27,13 @@ class GamePlayScene: SKScene {
     var playGameplayBGM = AVAudioPlayer()
     
     var employeeTaskBar = SKSpriteNode()
-    
+    var selectedTask = SKSpriteNode()
+    var selectedTaskBool  =  false
+    var selectedIndex = -1
+    var nizarTask = 0
+    var jasmineTask = 0
+    var clickedNodeName = ""
+    var lastClickedNode =  ""
     override func didMove(to view: SKView) {
 
         do{
@@ -107,11 +113,15 @@ class GamePlayScene: SKScene {
 //                        child.removeFromParent()
 //                    }
 //                }
-                 onGoingToDo(name: touchedNode.name!)
+                clickedNodeName = touchedNode.name!
+                selectedToDo(name: touchedNode.name!)
+                onGoingToDo()
            }
             else if (touchedNode.name?.contains("onProgress")  == true){
                 
-                onGoingOnProgress(name: touchedNode.name!)
+                clickedNodeName = touchedNode.name!
+                selectedOnProgress(name: clickedNodeName)
+                onGoingOnProgress()
                 
             }
             else if (touchedNode.name?.contains("onReview") == true) {
@@ -119,6 +129,21 @@ class GamePlayScene: SKScene {
                 print(currentOnReview.count)
                 onGoingReview(name: touchedNode.name!)
             }
+            else if(touchedNode.name?.contains("employeeCard") == true){
+                print(lastClickedNode)
+
+                if lastClickedNode.contains("toDo"){
+                    assignedToDo(name: touchedNode.name!)
+                    onGoingToDo()
+                }
+                else if lastClickedNode.contains("onProgress"){
+                    assignedOnProgress(name: touchedNode.name!)
+                    onGoingOnProgress()
+                }
+
+                
+            }
+
                 
         }
     }
@@ -211,27 +236,102 @@ class GamePlayScene: SKScene {
             addChild(todoMainCard)
     }
     
-    func onGoingToDo(name: String){
-
-        print("a")
-        for n in 0...currentTodoTask.count - 1{
+    func findingToDoTask(name: String) -> Int{
+        for n in 0...currentTodoTask.count-1 {
             if currentTodoTask[n].nodeName == name{
-                if currentTodoTask[n].progress == 0{
-                    if let child = self.childNode(withName: name){
-                        child.removeFromParent()
+                return  n
+            }
+        }
+        return  0
+    }
+    
+    func onGoingToDo(){
+        print("assign",currentTodoTask[selectedIndex].assign)
+        print("selected",currentTodoTask[selectedIndex].selected)
+        
+        for n in 0...currentTodoTask.count - 1{
+            if currentTodoTask[n].nodeName == clickedNodeName{
+                print("a")
+                if currentTodoTask[n].assign == true  && currentTodoTask[n].selected == true{
+                    
+                    if currentTodoTask[n].progress == 0{
+                        if let child = self.childNode(withName: clickedNodeName){
+                            child.removeFromParent()
+                        }
+                        currentTodoTask[n].assign = false
+                        currentTodoTask[n].selected = false
+                        currentOnProgres.append(currentTodoTask[n])
+                        currentTodoTask.remove(at: n)
+                        initOnProgressCard(index: 1)
+                        selectedTaskBool = false
+                        selectedTask.removeFromParent()
+                       // print(currentOnProgres[n].assign)
+                        break
+                        
                     }
-                    currentOnProgres.append(currentTodoTask[n])
-                    currentTodoTask.remove(at: n)
-                    initOnProgressCard(index: 1)
-                    break
                 }
+
 
             }
         }
 
     }
-    
-    
+
+    func selectedToDo(name: String){
+        let temp = findingToDoTask(name: name)
+        selectedIndex = temp
+        if selectedTaskBool == true {
+            currentTodoTask[selectedIndex].selected  = true
+            selectedTask.removeFromParent()
+        }
+        else {
+            print("a")
+            currentTodoTask[selectedIndex].selected = true
+            selectedTaskBool = true
+        }
+        
+        selectedTask = SKSpriteNode(color: .orange, size: CGSize(width: 79, height: 79))
+        
+        if(Int(name.prefix(1))==1) {
+            selectedTask.position = CGPoint(x: frame.minX*0.79, y: frame.maxY*0.3)
+            
+        }
+            
+        else if(Int(name.prefix(1))==2) {
+            selectedTask.position = CGPoint(x: frame.minX*0.61, y: frame.maxY*0.3)
+        }
+            
+        else if(Int(name.prefix(1))==3) {
+            selectedTask.position = CGPoint(x: frame.minX*0.79, y: frame.maxY*(-0.15))
+            
+        }
+            
+        else if(Int(name.prefix(1))==4) {
+            selectedTask.position = CGPoint(x: frame.minX*0.61, y: frame.maxY*(-0.15))
+        }
+        lastClickedNode = name
+        selectedTask.zPosition = 1
+        selectedTask.alpha = 1
+        addChild(selectedTask)
+        
+
+    }
+    func assignedToDo(name: String){
+
+        if selectedIndex != -1 {
+            print(currentTodoTask[selectedIndex].assign)
+            print(currentTodoTask[selectedIndex].selected)
+            currentTodoTask[selectedIndex].assign = true
+            currentTodoTask[selectedIndex].employeeName = name
+            if name.contains("Nizar"){
+                nizarTask += 1
+            }
+            else{
+                jasmineTask += 1
+            }
+            
+        }
+    }
     func initOnProgressCard(index: Int) {
         if index == 0 {
             
@@ -251,7 +351,7 @@ class GamePlayScene: SKScene {
                 
                 taskContainer.alpha = 0.5
                 taskMeter.size = CGSize(width: 60, height: 15)
-                taskMeter.name = "\(n - 1) onProgress"
+                taskMeter.name = "\(n) onProgress"
                 taskMeter.zPosition = 2
                 currentOnProgres[n - 1].nodeName = taskMeter.name!
             
@@ -295,23 +395,90 @@ class GamePlayScene: SKScene {
         }
 
     }
-    func onGoingOnProgress(name: String){
+    func findingOnProgressTask(name: String) -> Int{
+        for n in 0...currentOnProgres.count-1 {
+            if currentOnProgres[n].nodeName == name{
+                return  n
+            }
+        }
+        return  0
+    }
+    
+    func onGoingOnProgress(){
         
         for n in 0...currentOnProgres.count - 1{
-            if currentOnProgres[n].nodeName == name{
-                if currentOnProgres[n].progress == 0{
-                    if let child = self.childNode(withName: name){
+            if currentOnProgres[n].nodeName == clickedNodeName{
+                if currentOnProgres[n].progress == 0 && currentOnProgres[n].assign ==  true &&  currentOnProgres[n].selected == true{
+                    if let child = self.childNode(withName: clickedNodeName){
                         child.removeFromParent()
                     }
-                    currentOnReview.append(currentOnProgres[n])
+                    currentOnProgres[n].assign = false
+                    currentOnProgres[n].selected = false
+                currentOnReview.append(currentOnProgres[n])
                     currentOnProgres.remove(at: n)
                     initReviewCard(index: 1)
+                    selectedTaskBool = false
+                    selectedTask.removeFromParent()
                     break
                 }
                 
             }
         }
         
+    }
+    func selectedOnProgress(name: String){
+        let temp = findingOnProgressTask(name: name)
+        selectedIndex = temp
+        if selectedTaskBool == true {
+            currentOnProgres[selectedIndex].selected  = true
+            selectedTask.removeFromParent()
+        }
+        else {
+            print("a")
+            currentOnProgres[selectedIndex].selected = true
+            selectedTaskBool = true
+        }
+        
+        selectedTask = SKSpriteNode(color: .orange, size: CGSize(width: 79, height: 79))
+        
+        if(Int(name.prefix(1))==1) {
+            selectedTask.position = CGPoint(x: frame.minX*0.34, y: frame.maxY*0.3)
+            
+        }
+            
+        else if(Int(name.prefix(1))==2) {
+            selectedTask.position = CGPoint(x: frame.minX*0.16, y: frame.maxY*0.3)
+        }
+            
+        else if(Int(name.prefix(1))==3) {
+            selectedTask.position = CGPoint(x: frame.minX*0.34, y: frame.maxY*(-0.15))
+            
+        }
+            
+        else if(Int(name.prefix(1))==4) {
+            selectedTask.position = CGPoint(x: frame.minX*0.16, y: frame.maxY*(-0.15))
+        }
+        lastClickedNode = name
+        selectedTask.zPosition = 1
+        selectedTask.alpha = 1
+        addChild(selectedTask)
+    
+    }
+    func assignedOnProgress(name: String){
+        
+        if selectedIndex != -1 {
+            print(currentOnProgres[selectedIndex].assign)
+            print(currentOnProgres[selectedIndex].selected)
+            currentOnProgres[selectedIndex].assign = true
+            currentOnProgres[selectedIndex].employeeName = name
+            if name.contains("Nizar"){
+                nizarTask += 1
+            }
+            else{
+                jasmineTask += 1
+            }
+            
+        }
     }
     func initReviewCard(index: Int) {
         if index == 0{
@@ -451,18 +618,18 @@ class GamePlayScene: SKScene {
         
 
         var charSpace:CGFloat = 0.65
-        for n in 1...6 {
-            let employeeCard = SKSpriteNode(imageNamed: "lock")
-            employeeCard.size = CGSize(width: 55, height: 55)
-            employeeCard.name = "employeeCard-\(n)"
+        for n in 1...employeeCharacter.count {
+            let employeeCard = SKSpriteNode(imageNamed: "\(employeeCharacter[n-1].name!)")
+            employeeCard.size = CGSize(width: 100, height: 100)
+            employeeCard.name = "\(employeeCharacter[n-1].name!) employeeCard"
             employeeCard.position = CGPoint(x: frame.minX*charSpace, y: frame.minY*0.75)
-            //addChild(employeeCard)
-            let characterName = SKLabelNode(text: "\(employeeCharacter[n-1].name!)")
-            characterName.fontName = "FoxGrotesqueProHeavy"
-            characterName.position = CGPoint(x: frame.minX*charSpace, y: frame.minY*0.75)
-            addChild(characterName)
+            addChild(employeeCard)
+//            let characterName = SKLabelNode(text: "\(employeeCharacter[n-1].name!)")
+//            characterName.fontName = "FoxGrotesqueProHeavy"
+//            characterName.position = CGPoint(x: frame.minX*charSpace, y: frame.minY*0.75)
+//            characterName.fontSize = 15
+//            addChild(characterName)
             charSpace-=0.25
-            
             
         }
     }
@@ -485,15 +652,16 @@ class GamePlayScene: SKScene {
     }
     
     func detailGameBar() {
-        let detailContainer = SKSpriteNode(color: .black, size: CGSize(width: frame.width/3, height: frame.height/8))
-        detailContainer.position = CGPoint(x: frame.midX - 10, y: frame.maxY * 0.85)
+        let detailContainer = SKSpriteNode(imageNamed: "Time-Bar")
+        detailContainer.size = CGSize(width: frame.width/3, height: frame.height/8)
+        detailContainer.position = CGPoint(x: frame.midX - 10, y: frame.maxY * 0.87)
         addChild(detailContainer)
         
         let taskLabel = SKLabelNode(text: "5/5")
         taskLabel.fontName =  "FoxGrotesqueProHeavy"
         taskLabel.fontSize = 20
         taskLabel.fontColor = SKColor.white
-        taskLabel.position = CGPoint(x: detailContainer.frame.minX + 50, y: detailContainer.frame.midY * 0.96)
+        taskLabel.position = CGPoint(x: detailContainer.frame.minX + 80, y: detailContainer.frame.midY )
         taskLabel.zPosition = 1
         addChild(taskLabel)
         
@@ -501,20 +669,16 @@ class GamePlayScene: SKScene {
         timeLabel.fontName = "FoxGrotesqueProHeavy"
         timeLabel.fontSize = 20
         timeLabel.fontColor =  SKColor.white
-        timeLabel.position = CGPoint(x: detailContainer.frame.maxX * 0.8, y: detailContainer.frame.midY * 0.96)
+        timeLabel.position = CGPoint(x: detailContainer.frame.maxX * 0.7, y: detailContainer.frame.midY)
         timeLabel.zPosition = 1
         addChild(timeLabel)
         
-        let roundSprite = SKSpriteNode(color: .white, size: CGSize(width: 50, height: 50))
-        roundSprite.position = CGPoint(x: detailContainer.frame.midX, y: detailContainer.frame.maxY * 0.9)
-        roundSprite.zPosition = 1
-        addChild(roundSprite)
     }
     func getAllTaskByStage() -> [TaskCardContainer] {
         var allStageTask = [TaskCardContainer]()
         
         for n in 1...5 {
-            allStageTask.append(TaskCardContainer(name: "taskkkkkkk \(n)", type: "eng", status: false, progress: 0, nodeName: ""))
+            allStageTask.append(TaskCardContainer(name: "taskkkkkkk \(n)", type: "eng", status: false, progress: 0, nodeName: "",  selected: false, assign: false, employeeName: ""))
         }
         
         return allStageTask
@@ -527,12 +691,18 @@ class TaskCardContainer {
     var nodeName: String
     var status: Bool
     var progress: Int
+    var selected: Bool
+    var assign: Bool
+    var employeeName: String
     
-    init(name: String, type: String, status: Bool, progress: Int, nodeName: String) {
+    init(name: String, type: String, status: Bool, progress: Int, nodeName: String, selected: Bool, assign: Bool, employeeName: String) {
         self.name = name
         self.type = type
         self.status = status
         self.progress = progress
         self.nodeName = nodeName
+        self.selected = selected
+        self.assign = selected
+        self.employeeName = employeeName
     }
 }

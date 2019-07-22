@@ -16,6 +16,7 @@ class EmployeeSelectScene: SKScene {
     let impact = UIImpactFeedbackGenerator()
     let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
     let employeeSelect = SKSpriteNode(imageNamed: "Team-Box-Idle")
+    
     override func didMove(to view: SKView) {
         background.position = CGPoint(x: frame.midX, y: frame.midY)
         background.size = CGSize(width: frame.self.width, height: frame.self.height)
@@ -26,6 +27,9 @@ class EmployeeSelectScene: SKScene {
         employeeSelect.size = CGSize(width: self.size.width-150, height: self.size.height+30)
         employeeSelect.zPosition = 1
         addChild(employeeSelect)
+        
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

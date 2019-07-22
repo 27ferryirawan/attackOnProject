@@ -50,6 +50,8 @@
 		DBC7142022E3325A000A089B /* EmployeeSelectScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DBC7141F22E3325A000A089B /* EmployeeSelectScene.sks */; };
 		DBC7142222E3384F000A089B /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DBC7142122E3384E000A089B /* Click.mp3 */; };
 		DBC7142422E386F1000A089B /* Ingame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DBC7142322E386F1000A089B /* Ingame.mp3 */; };
+		DBC7142622E3AEB4000A089B /* Pause-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7142522E3AEB4000A089B /* Pause-Button.png */; };
+		DBC7142822E56A98000A089B /* Plain-Black-Wallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = DBC7142722E56A98000A089B /* Plain-Black-Wallpaper.png */; };
 		FE002FAB22DEF1F000C25719 /* Fox Grotesque Pro Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA122DEF1F000C25719 /* Fox Grotesque Pro Italic.otf */; };
 		FE002FAC22DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA222DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf */; };
 		FE002FAD22DEF1F000C25719 /* Fox Grotesque Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE002FA322DEF1F000C25719 /* Fox Grotesque Pro Bold.otf */; };
@@ -112,6 +114,8 @@
 		DBC7141F22E3325A000A089B /* EmployeeSelectScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EmployeeSelectScene.sks; sourceTree = "<group>"; };
 		DBC7142122E3384E000A089B /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
 		DBC7142322E386F1000A089B /* Ingame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ingame.mp3; sourceTree = "<group>"; };
+		DBC7142522E3AEB4000A089B /* Pause-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause-Button.png"; sourceTree = "<group>"; };
+		DBC7142722E56A98000A089B /* Plain-Black-Wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plain-Black-Wallpaper.png"; sourceTree = "<group>"; };
 		FE002FA122DEF1F000C25719 /* Fox Grotesque Pro Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Italic.otf"; sourceTree = "<group>"; };
 		FE002FA222DEF1F000C25719 /* Fox Grotesque Pro Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Light Italic.otf"; sourceTree = "<group>"; };
 		FE002FA322DEF1F000C25719 /* Fox Grotesque Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fox Grotesque Pro Bold.otf"; sourceTree = "<group>"; };
@@ -158,7 +162,6 @@
 		12DCBB0922D83276007E1469 = {
 			isa = PBXGroup;
 			children = (
-				DBC7141C22E33219000A089B /* EmployeeSelectScene */,
 				12D4062F22E15DC000EC67B4 /* Controller */,
 				12D4062C22E159E700EC67B4 /* Model */,
 				12DCBB3822D839C6007E1469 /* View */,
@@ -178,6 +181,7 @@
 		12DCBB1422D83276007E1469 /* AttactOnProject */ = {
 			isa = PBXGroup;
 			children = (
+				DBC7142522E3AEB4000A089B /* Pause-Button.png */,
 				12DCBB1522D83276007E1469 /* AppDelegate.swift */,
 				12DCBB1922D83276007E1469 /* Actions.sks */,
 				12DCBB1F22D83276007E1469 /* Main.storyboard */,
@@ -190,6 +194,7 @@
 				DBC7141422E172A6000A089B /* Loading1.jpg */,
 				DBC7141622E172A7000A089B /* Loading2.jpg */,
 				DBC7141522E172A6000A089B /* Loading3.jpg */,
+				DBC7142722E56A98000A089B /* Plain-Black-Wallpaper.png */,
 				DBC7141A22E1BA62000A089B /* Select Team.png */,
 				12DCBB2222D83276007E1469 /* Assets.xcassets */,
 				DBC7142322E386F1000A089B /* Ingame.mp3 */,
@@ -207,6 +212,7 @@
 		12DCBB3822D839C6007E1469 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DBC7141C22E33219000A089B /* EmployeeSelectScene */,
 				BE35BF9C22DEFCE700763A7D /* GameView Controller */,
 				BE35BF9B22DEFCD300763A7D /* Game Scene */,
 				BE35BF9722DEFCA600763A7D /* Tutorial One */,
@@ -391,7 +397,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 12DCBB0D22D83276007E1469 /* Build configuration list for PBXProject "AttactOnProject" */;
+			buildConfigurationList = 12DCBB0D22D83276007E1469 /* Build configuration list for PBXProject "Attack On Project" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -416,6 +422,7 @@
 			files = (
 				FE002FB222DEF1F000C25719 /* Fox Grotesque Pro.otf in Resources */,
 				DBC7141B22E1BA62000A089B /* Select Team.png in Resources */,
+				DBC7142622E3AEB4000A089B /* Pause-Button.png in Resources */,
 				12D4062B22E02C8C00EC67B4 /* gameData.json in Resources */,
 				DBC7140E22E010D3000A089B /* Clieff.png in Resources */,
 				DBC7140222DF32D9000A089B /* Main Menu AoP.mp3 in Resources */,
@@ -450,6 +457,7 @@
 				DBC7140C22E010D3000A089B /* Sen.png in Resources */,
 				12DCBB5522DB3136007E1469 /* UpgradeShopScene.sks in Resources */,
 				12DCBB4022DB0DD5007E1469 /* StageScene.sks in Resources */,
+				DBC7142822E56A98000A089B /* Plain-Black-Wallpaper.png in Resources */,
 				DBC7140B22E010D3000A089B /* Devina.png in Resources */,
 				12DCBB4522DB2796007E1469 /* PreGameScene.sks in Resources */,
 				12DCBB1A22D83276007E1469 /* Actions.sks in Resources */,
@@ -663,7 +671,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		12DCBB0D22D83276007E1469 /* Build configuration list for PBXProject "AttactOnProject" */ = {
+		12DCBB0D22D83276007E1469 /* Build configuration list for PBXProject "Attack On Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				12DCBB2822D83276007E1469 /* Debug */,

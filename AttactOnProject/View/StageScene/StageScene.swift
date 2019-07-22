@@ -200,21 +200,19 @@ class StageScene: SKScene {
                 print(arrBlueLevelBox[1].position)
                 arrBlueLevelBox[touchedBoxNode-1].texture = SKTexture(imageNamed: "orangeBlock")
                 
-                let levelDetail = SKSpriteNode(imageNamed: "<#T##String#>")
+//                let levelDetail = SKSpriteNode(imageNamed: "<#T##String#>")
             } else if nameOfTouch == "upgradeButton" {
                 upgradeButton.run(SKAction.sequence([
                     ClickSoundEffect,
                     SKAction.run(goToUpgradeScene)
                     ]))
                 impact.impactOccurred()
-                goToUpgradeScene()
             } else if nameOfTouch == "closeButton" {
                 closeButton.run(SKAction.sequence([
                     ClickSoundEffect,
                     SKAction.run(returntoGameScene)
                     ]))
                 impact.impactOccurred()
-                returntoGameScene()
             }
         }
     }

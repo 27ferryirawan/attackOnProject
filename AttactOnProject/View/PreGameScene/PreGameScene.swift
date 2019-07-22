@@ -19,9 +19,12 @@ class PreGameScene: SKScene {
     let backButton = SKSpriteNode(imageNamed: "closeBtn")
     let SelectTeam = SKSpriteNode(imageNamed: "Select Team")
     let SelectTeam2 = SKSpriteNode(imageNamed: "Select Team 2")
+    let upgradeButton2 = SKSpriteNode(imageNamed: "Upgrade-Button")
+    let ClickSoundEffect = SKAction.playSoundFileNamed("Click.mp3", waitForCompletion: false)
     var screenText : SKLabelNode!
     let impact = UIImpactFeedbackGenerator()
     let GameViewing = GameViewController()
+    
     
     override func didMove(to view: SKView) {
         //backround sizing and positioning
@@ -62,6 +65,13 @@ class PreGameScene: SKScene {
         SelectTeam2.position = CGPoint(x: levelPreview.frame.midX-93, y: levelPreview.frame.midY-18)
         SelectTeam2.zPosition = 4
         
+        //Upgrade Button Sizing and Styling
+        upgradeButton2.position = CGPoint(x: frame.midX+370, y: frame.midY-100)
+        upgradeButton2.size = CGSize(width: self.size.width/4.5, height: self.size.height/3.5)
+        upgradeButton2.zPosition = 4
+        upgradeButton2.name = "upgradeButton"
+        
+        addChild(upgradeButton2)
         addChild(SelectTeam2)
         addChild(SelectTeam)
         addChild(backButton)
@@ -76,16 +86,19 @@ class PreGameScene: SKScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if touchedNode.name == "startButton" {
-                //GameViewController.playBGM
-                impact.impactOccurred()
+               impact.impactOccurred()
+                nextButton.run(SKAction.sequence([ClickSoundEffect,SKAction.run(goToNextScene)]))
+                goToNextScene()
                 // Call the function here.
-                self.goToNextScene()
             } else if touchedNode.name == "backButton" {
                 impact.impactOccurred()
-                self.returntoLevelSelect()
+                backButton.run(SKAction.sequence([ClickSoundEffect,SKAction.run(returntoLevelSelect)]))
             } else if touchedNode.name == "selectTeam" {
                 impact.impactOccurred()
-                self.selectEmployeeScene()
+                SelectTeam.run(SKAction.sequence([ClickSoundEffect,SKAction.run(selectEmployeeScene)]))
+            } else if touchedNode.name == "upgradeButton" {
+                impact.impactOccurred()
+                upgradeButton2.run(SKAction.sequence([ClickSoundEffect,SKAction.run(gotoUpgradeScene)]))
             }
         }
     }
@@ -114,6 +127,13 @@ class PreGameScene: SKScene {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
         let scene:SKScene = EmployeeSelectScene(size: skView!.bounds.size)
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.view?.presentScene(scene, transition: transition)
+    }
+    
+    func gotoUpgradeScene() {
+        let skView = self.view as SKView?
+        let transition:SKTransition = SKTransition.fade(withDuration: 1)
+        let scene:SKScene = UpgradeShopScene(size: skView!.bounds.size)
         self.view?.presentScene(scene, transition: transition)
     }
 }

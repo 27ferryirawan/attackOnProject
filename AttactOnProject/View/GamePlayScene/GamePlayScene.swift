@@ -11,24 +11,27 @@ import GameplayKit
 import AVKit
 import AVFoundation
 
+
 class GamePlayScene: SKScene {
-    let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
-    let nextButton = SKSpriteNode(imageNamed: "right-arrow")
+    var totalSeconds:Int = 300
+    let timer = SKLabelNode(fontNamed: "FoxGrotesqueProHeavy")
     var screenText : SKLabelNode!
-
+    let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
+    let pauseButton = SKSpriteNode(imageNamed: "Pause-Button")
     let notification = NotificationCenter.default
-
     var currentTodoTask = [TaskCardContainer]()
     var currentOnProgres = [TaskCardContainer]()
     var currentOnReview = [TaskCardContainer]()
     var currentDone = [TaskCardContainer]()
     var allTodoTask = [TaskCardContainer]()
     var playGameplayBGM = AVAudioPlayer()
-    
     var employeeTaskBar = SKSpriteNode()
+    let dimPanel = SKSpriteNode(imageNamed: "Plain-Black-Wallpaper")
+    let giveUp = SKSpriteNode(imageNamed: "Give-Up")
+    let continueButton = SKSpriteNode(imageNamed: "Continue-Button")
     
     override func didMove(to view: SKView) {
-
+        
         print("tesss")
         do{
             playGameplayBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "Ingame", ofType: "mp3")!))
@@ -50,10 +53,28 @@ class GamePlayScene: SKScene {
         self.initEmployeeCard()
         self.initScoreCard()
         self.detailGameBar()
+        self.initPauseButton()
+        self.initFadelayer()
         upadateProgressBar()
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
+        
+    }
+    func restartTimer(){
+        
+        let wait:SKAction = SKAction.wait(forDuration: 1)
+        let finishTimer:SKAction = SKAction.run {
+            self.totalSeconds -= 1
+            
+            self.timer.text = "\((self.totalSeconds % 3600) / 60) : \((self.totalSeconds % 3600) % 60)"
+            
+            self.restartTimer()
+        }
+        
+        let seq:SKAction = SKAction.sequence([wait, finishTimer])
+        self.run(seq)
         
         
     }
@@ -74,6 +95,7 @@ class GamePlayScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
+            var nameofTouchedNode = touchedNode.name
             print(touchedNode.name)
             print(currentOnReview.count)
             if (touchedNode.name?.contains("toDo") == true){
@@ -100,19 +122,80 @@ class GamePlayScene: SKScene {
                 print("a")
                 print(currentOnReview.count)
                 onGoingReview(name: touchedNode.name!)
+            }else if nameofTouchedNode == "pauseButton" as String? {
+                if dimPanel.isHidden == true {
+                    dimPanel.isHidden = false
+                    giveUp.isHidden = false
+                    continueButton.isHidden = false
+                }
+            } else if nameofTouchedNode == "giveUpButton" as String? {
+                backToStageScene()
+            } else if nameofTouchedNode == "continueButton" as String? {
+                dimPanel.isHidden = true
+                giveUp.isHidden = true
+                continueButton.isHidden = true
             }
                 
         }
     }
     
+    func backToStageScene() {
+        let transition:SKTransition = SKTransition.fade(withDuration: 1)
+        let scene:SKScene = StageScene(size: self.size)
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.view?.presentScene(scene, transition: transition)
+    }
     func goToNextScene() {
         let transition:SKTransition = SKTransition.fade(withDuration: 1)
         let scene:SKScene = AfterGameScene(size: self.size)
         self.view?.presentScene(scene, transition: transition)
     }
     
+    func initGiveUpButton() {
+        giveUp.position = CGPoint(x: frame.midX-200, y: frame.midY)
+        giveUp.size = CGSize(width: self.size.width/2.5, height: self.size.height/3)
+        giveUp.name = "giveUpButton"
+        giveUp.zPosition = 101
+        addChild(giveUp)
+        giveUp.isHidden = true
+    }
+    
+    func initContinueButton() {
+        continueButton.position = CGPoint(x: frame.midX+200, y: frame.midY)
+        continueButton.size = CGSize(width: self.size.width/2.5, height: self.size.height/3)
+        continueButton.name = "continueButton"
+        continueButton.zPosition = 101
+        addChild(continueButton)
+        continueButton.isHidden = true
+    }
+    func initFadelayer() {
+        
+        dimPanel.color = UIColor.black
+        dimPanel.alpha = 0.75
+        dimPanel.zPosition = 100
+        dimPanel.position = CGPoint(x: frame.midX, y: frame.midY)
+        dimPanel.size = CGSize(width: self.frame.width, height: self.frame.height)
+        dimPanel.name = "dimPanel"
+        initGiveUpButton()
+        initContinueButton()
+        self.addChild(dimPanel)
+        dimPanel.isHidden = true
+    }
+    func initTimeBar() {
+        let gameBar = SKSpriteNode(imageNamed: "Time-Bar")
+        gameBar.size = self.size
+        gameBar.position = CGPoint(x: frame.midX, y: frame.maxY)
+        gameBar.zPosition = 3
+        addChild(gameBar)
+    }
+    func initPauseButton() {
+        pauseButton.name = "pauseButton"
+        pauseButton.position = CGPoint(x: frame.minX+45, y: frame.maxY*0.85)
+        pauseButton.size = CGSize(width: self.size.width/16, height: self.size.height/8)
+        pauseButton.zPosition = 3
+        addChild(pauseButton)
+    }
     func initBackground() {
-        let background = SKSpriteNode(imageNamed: "gamePlaySceneBackground")
         background.zPosition = -2
         background.position = CGPoint(x: frame.midX, y: frame.midY)
         background.size = CGSize(width: frame.width, height: frame.height)
@@ -472,13 +555,17 @@ class GamePlayScene: SKScene {
         taskLabel.zPosition = 1
         addChild(taskLabel)
         
-        let timeLabel =  SKLabelNode(text: "4:59")
-        timeLabel.fontName = "FoxGrotesqueProHeavy"
-        timeLabel.fontSize = 20
-        timeLabel.fontColor =  SKColor.white
-        timeLabel.position = CGPoint(x: detailContainer.frame.maxX * 0.8, y: detailContainer.frame.midY * 0.96)
-        timeLabel.zPosition = 1
-        addChild(timeLabel)
+        
+        timer.fontSize = 20
+        timer.fontColor = SKColor.white
+        timer.position = CGPoint(x: detailContainer.frame.maxX * 0.8, y: detailContainer.frame.midY * 0.96)
+        timer.zPosition = 1
+        timer.name = "Timer"
+        addChild(timer)
+        timer.text = "\((totalSeconds % 3600) / 60) : \((totalSeconds % 3600) % 60)"
+        restartTimer()
+        
+
         
         let roundSprite = SKSpriteNode(color: .white, size: CGSize(width: 50, height: 50))
         roundSprite.position = CGPoint(x: detailContainer.frame.midX, y: detailContainer.frame.maxY * 0.9)

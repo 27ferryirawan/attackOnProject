@@ -78,8 +78,11 @@ class GamePlayScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
-        
+        if currentDone.count == 4{
+            let transition:SKTransition = SKTransition.fade(withDuration: 1)
+            let scene:SKScene = FinishGame(size: self.size)
+            self.view?.presentScene(scene, transition: transition)
+        }
     }
     func upadateProgressBar(){
 //        if currentTodoTask.count != 0 {
@@ -667,15 +670,15 @@ class GamePlayScene: SKScene {
     
     func detailGameBar() {
         let detailContainer = SKSpriteNode(imageNamed: "Time-Bar")
-        detailContainer.size = CGSize(width: frame.width/3, height: frame.height/8)
-        detailContainer.position = CGPoint(x: frame.midX - 10, y: frame.maxY * 0.87)
+        detailContainer.size = CGSize(width: frame.width/3, height: frame.height/8+14)
+        detailContainer.position = CGPoint(x: frame.midX - 10, y: frame.maxY * 0.87-5)
         addChild(detailContainer)
         
         let taskLabel = SKLabelNode(text: "5/5")
         taskLabel.fontName =  "FoxGrotesqueProHeavy"
         taskLabel.fontSize = 20
         taskLabel.fontColor = SKColor.white
-        taskLabel.position = CGPoint(x: detailContainer.frame.minX + 80, y: detailContainer.frame.midY )
+        taskLabel.position = CGPoint(x: detailContainer.frame.minX + 80, y: detailContainer.frame.midY+6)
         taskLabel.zPosition = 1
         addChild(taskLabel)
         
@@ -683,7 +686,7 @@ class GamePlayScene: SKScene {
         timeLabel.fontName = "FoxGrotesqueProHeavy"
         timeLabel.fontSize = 20
         timeLabel.fontColor =  SKColor.white
-        timeLabel.position = CGPoint(x: detailContainer.frame.maxX * 0.7, y: detailContainer.frame.midY)
+        timeLabel.position = CGPoint(x: detailContainer.frame.maxX * 0.7-1, y: detailContainer.frame.midY+6)
         timeLabel.zPosition = 1
         addChild(timeLabel)
         

@@ -117,7 +117,7 @@ class FinishGame: SKScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             if touchedNode.name == "nextButton" {
-                self.goToNextScene()
+//                self.goToNextScene()
             }
         }
     }

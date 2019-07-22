@@ -259,7 +259,7 @@ class StageScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
-            print(Int(touchedNode.name!))
+//            print(Int(touchedNode.name!))
             if touchedNode.name != nil && touchedBoxNode != -1 {
                 goToNextScene()
                 

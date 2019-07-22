@@ -588,7 +588,7 @@ class GamePlayScene: SKScene {
             
             let n =  currentDone.count
             let taskContainer = SKSpriteNode(color: UIColor.black, size: CGSize(width: 79, height: 79))
-            let employeeCard = SKSpriteNode(imageNamed: "Done-Mark")
+            let employeeCard = SKSpriteNode(imageNamed: "Done-Mark") //test
             
             taskContainer.alpha = 0.5
             employeeCard.size = CGSize(width: 55, height: 55)

@@ -57,7 +57,7 @@ class GamePlayScene: SKScene {
         self.initScoreCard()
         self.detailGameBar()
         upadateProgressBar()
-        
+       print( employeeCharacter[0].type)
     }
     
     func getEmployee () {
@@ -133,11 +133,15 @@ class GamePlayScene: SKScene {
                 print(lastClickedNode)
 
                 if lastClickedNode.contains("toDo"){
-                    assignedToDo(name: touchedNode.name!)
+                    let type = getSelectedEmployeeType(name: touchedNode.name!)
+                    print("this is \(type)")
+                    assignedToDo(name: touchedNode.name!, type: type)
                     onGoingToDo()
                 }
                 else if lastClickedNode.contains("onProgress"){
-                    assignedOnProgress(name: touchedNode.name!)
+                    let type = getSelectedEmployeeType(name: touchedNode.name!)
+                    print("this is \(type)")
+                    assignedOnProgress(name: touchedNode.name!, type: type)
                     onGoingOnProgress()
                 }
 
@@ -276,7 +280,17 @@ class GamePlayScene: SKScene {
         }
 
     }
-
+    func getSelectedEmployeeType(name: String) -> String{
+        
+        for n in 0...employeeCharacter.count - 1{
+            
+            if name.contains(employeeCharacter[n].name) == true{
+                print("YEY")
+                return employeeCharacter[n].type
+            }
+        }
+        return ""
+    }
     func selectedToDo(name: String){
         let temp = findingToDoTask(name: name)
         selectedIndex = temp
@@ -316,9 +330,10 @@ class GamePlayScene: SKScene {
         
 
     }
-    func assignedToDo(name: String){
-
-        if selectedIndex != -1 {
+    func assignedToDo(name: String, type: String){
+        print("a")
+        print("aa",type)
+        if selectedIndex != -1 && type == "SE"{
             if currentTodoTask[selectedIndex].selected == true{
                 print(currentTodoTask[selectedIndex].assign)
                 print(currentTodoTask[selectedIndex].selected)
@@ -328,9 +343,6 @@ class GamePlayScene: SKScene {
             currentTodoTask[selectedIndex].employeeName = name
             if name.contains("Nizar"){
                 nizarTask += 1
-            }
-            else{
-                jasmineTask += 1
             }
             
         }
@@ -473,9 +485,9 @@ class GamePlayScene: SKScene {
         addChild(selectedTask)
     
     }
-    func assignedOnProgress(name: String){
+    func assignedOnProgress(name: String, type: String){
         
-        if selectedIndex != -1 {
+        if selectedIndex != -1 && type == "QA"{
             if currentOnProgres[selectedIndex].selected == true {
             currentOnProgres[selectedIndex].assign = true
             }

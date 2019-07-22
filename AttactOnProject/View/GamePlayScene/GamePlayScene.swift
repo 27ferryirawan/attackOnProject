@@ -319,9 +319,12 @@ class GamePlayScene: SKScene {
     func assignedToDo(name: String){
 
         if selectedIndex != -1 {
-            print(currentTodoTask[selectedIndex].assign)
-            print(currentTodoTask[selectedIndex].selected)
-            currentTodoTask[selectedIndex].assign = true
+            if currentTodoTask[selectedIndex].selected == true{
+                print(currentTodoTask[selectedIndex].assign)
+                print(currentTodoTask[selectedIndex].selected)
+                currentTodoTask[selectedIndex].assign = true
+            }
+
             currentTodoTask[selectedIndex].employeeName = name
             if name.contains("Nizar"){
                 nizarTask += 1
@@ -367,7 +370,11 @@ class GamePlayScene: SKScene {
                 employeeTaskLabel.verticalAlignmentMode = .center
                 //employeeTaskLabel.alig
                 employeeTaskLabel.numberOfLines = 0
-                
+                print(currentOnProgres[n-1].employeeName)
+                let smallCharImg = SKSpriteNode(imageNamed: "\(currentOnProgres[n - 1].employeeName) Small")
+                smallCharImg.size = CGSize(width: 30, height: 40)
+                smallCharImg.position = CGPoint(x: taskMeter.frame.midX, y: taskMeter.frame.minY - 15)
+
                 if(n==1) {
                     taskContainer.position = CGPoint(x: frame.minX*0.34, y: frame.maxY*0.3)
                     taskMeter.position = CGPoint(x: frame.minX*0.34, y: frame.maxY*0.3)
@@ -391,7 +398,8 @@ class GamePlayScene: SKScene {
                 addChild(taskMeter)
                 addChild(taskContainer)
                 taskMeter.addChild(employeeTaskLabel)
-            
+                taskMeter.addChild(smallCharImg)
+
         }
 
     }
@@ -438,7 +446,7 @@ class GamePlayScene: SKScene {
             currentOnProgres[selectedIndex].selected = true
             selectedTaskBool = true
         }
-        
+
         selectedTask = SKSpriteNode(color: .orange, size: CGSize(width: 79, height: 79))
         
         if(Int(name.prefix(1))==1) {
@@ -467,9 +475,9 @@ class GamePlayScene: SKScene {
     func assignedOnProgress(name: String){
         
         if selectedIndex != -1 {
-            print(currentOnProgres[selectedIndex].assign)
-            print(currentOnProgres[selectedIndex].selected)
+            if currentOnProgres[selectedIndex].selected == true {
             currentOnProgres[selectedIndex].assign = true
+            }
             currentOnProgres[selectedIndex].employeeName = name
             if name.contains("Nizar"){
                 nizarTask += 1
@@ -512,7 +520,10 @@ class GamePlayScene: SKScene {
             employeeTaskLabel.verticalAlignmentMode = .center
             //employeeTaskLabel.alig
             employeeTaskLabel.numberOfLines = 0
-            
+            let smallCharImg = SKSpriteNode(imageNamed: "\(currentOnReview[n - 1].employeeName) Small")
+            smallCharImg.size = CGSize(width: 30, height: 40)
+            smallCharImg.position = CGPoint(x: taskMeter.frame.midX, y: taskMeter.frame.minY - 15)
+
             
             if(n==1) {
                 taskContainer.position = CGPoint(x: frame.maxX*0.11, y: frame.maxY*0.3)
@@ -537,6 +548,7 @@ class GamePlayScene: SKScene {
             addChild(taskMeter)
             addChild(taskContainer)
             taskMeter.addChild(employeeTaskLabel)
+            taskMeter.addChild(smallCharImg)
         }
        
     }
@@ -678,7 +690,7 @@ class GamePlayScene: SKScene {
         var allStageTask = [TaskCardContainer]()
         
         for n in 1...5 {
-            allStageTask.append(TaskCardContainer(name: "taskkkkkkk \(n)", type: "eng", status: false, progress: 0, nodeName: "",  selected: false, assign: false, employeeName: ""))
+            allStageTask.append(TaskCardContainer(name: "taskkkkkkk \(n)", type: "eng", status: false, progress: 0, nodeName: "",  selected: false, assign: false, employeeName: "", image: SKSpriteNode(imageNamed: "")))
         }
         
         return allStageTask
@@ -694,8 +706,9 @@ class TaskCardContainer {
     var selected: Bool
     var assign: Bool
     var employeeName: String
+    var image: SKSpriteNode
     
-    init(name: String, type: String, status: Bool, progress: Int, nodeName: String, selected: Bool, assign: Bool, employeeName: String) {
+    init(name: String, type: String, status: Bool, progress: Int, nodeName: String, selected: Bool, assign: Bool, employeeName: String, image: SKSpriteNode) {
         self.name = name
         self.type = type
         self.status = status
@@ -704,5 +717,6 @@ class TaskCardContainer {
         self.selected = selected
         self.assign = selected
         self.employeeName = employeeName
+        self.image = image
     }
 }

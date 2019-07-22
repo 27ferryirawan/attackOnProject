@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "View/StageScene/StageScene.swift"
-            timestampString = "585415353.097994"
+            timestampString = "585427172.462747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "View/GamePlayScene/GamePlayScene.swift"
-            timestampString = "585424515.26836"
+            timestampString = "585453328.440739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "576"
-            endingLineNumber = "576"
+            startingLineNumber = "589"
+            endingLineNumber = "589"
             landmarkName = "initDoneCard(index:)"
             landmarkType = "7">
          </BreakpointContent>

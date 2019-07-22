@@ -374,6 +374,7 @@ class GamePlayScene: SKScene {
                 let smallCharImg = SKSpriteNode(imageNamed: "\(currentOnProgres[n - 1].employeeName) Small")
                 smallCharImg.size = CGSize(width: 30, height: 40)
                 smallCharImg.position = CGPoint(x: taskMeter.frame.midX, y: taskMeter.frame.minY - 15)
+            smallCharImg.zPosition = 1
 
                 if(n==1) {
                     taskContainer.position = CGPoint(x: frame.minX*0.34, y: frame.maxY*0.3)
@@ -523,6 +524,7 @@ class GamePlayScene: SKScene {
             let smallCharImg = SKSpriteNode(imageNamed: "\(currentOnReview[n - 1].employeeName) Small")
             smallCharImg.size = CGSize(width: 30, height: 40)
             smallCharImg.position = CGPoint(x: taskMeter.frame.midX, y: taskMeter.frame.minY - 15)
+            smallCharImg.zPosition = 1
 
             
             if(n==1) {
@@ -586,7 +588,7 @@ class GamePlayScene: SKScene {
             
             let n =  currentDone.count
             let taskContainer = SKSpriteNode(color: UIColor.black, size: CGSize(width: 79, height: 79))
-            let employeeCard = SKSpriteNode(imageNamed: "lock")
+            let employeeCard = SKSpriteNode(imageNamed: "Done-Mark")
             
             taskContainer.alpha = 0.5
             employeeCard.size = CGSize(width: 55, height: 55)
